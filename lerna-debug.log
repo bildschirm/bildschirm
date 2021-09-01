@@ -1,0 +1,21 @@
+0 silly argv {
+0 silly argv   _: [ 'import' ],
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': '/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/.bin/lerna',
+0 silly argv   dir: '../mission-control/'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath /Users/mat/Projects/bildschirm
+3 error Error: Command failed with exit code 128: git rev-parse HEAD
+3 error fatal: mehrdeutiges Argument 'HEAD': unbekannter Commit oder Pfad existiert nicht
+3 error im Arbeitsverzeichnis
+3 error Benutzen Sie '--', um Pfade und Commits zu trennen, ähnlich wie:
+3 error 'git <Befehl> [<Commit>...] -- [<Datei>...]'
+3 error HEAD
+3 error     at makeError (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/execa/lib/error.js:60:11)
+3 error     at Function.module.exports.sync (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/execa/index.js:194:17)
+3 error     at Object.execSync (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/@lerna/child-process/index.js:39:16)
+3 error     at ImportCommand.execSync (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/@lerna/import/index.js:141:25)
+3 error     at ImportCommand.getCurrentSHA (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/@lerna/import/index.js:133:17)
+3 error     at ImportCommand.initialize (/Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/@lerna/import/index.js:102:31)
+3 error     at /Users/mat/.npm/_npx/d5cad42883f80c04/node_modules/@lerna/command/index.js:274:24
