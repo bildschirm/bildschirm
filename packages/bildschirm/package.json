@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/bildschirm/bildschirm/issues"
   },
-  "homepage": "https://github.com/bildschirm/bildschirm#readme"
+  "homepage": "https://github.com/bildschirm/bildschirm#readme",
+  "gitHead": "4f404753ec327f2090d2c0365de56936bd455e69"
 }
