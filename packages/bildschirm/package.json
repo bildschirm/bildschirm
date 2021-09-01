@@ -1,6 +1,6 @@
 {
   "name": "bildschirm",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "New home for mission-control. Bildschirm is coming soon!",
   "main": "index.js",
   "scripts": {
