@@ -6,6 +6,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "import": "lerna import packages/mission-control"
   }
 }
