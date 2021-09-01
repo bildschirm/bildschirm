@@ -5,6 +5,7 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "import": "lerna import ../mission-control"
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish"
   }
 }
