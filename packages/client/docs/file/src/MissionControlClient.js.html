@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/MissionControlClient.js | Mission Control Client</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A client for Node.js and the browser to easily connect and interact with the Mission Control system."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Mission Control Client"><meta property="twitter:description" content="A client for Node.js and the browser to easily connect and interact with the Mission Control system."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Capevace/mission-control-client"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/MissionControlClient.js~MissionControlClient.html">MissionControlClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DISCONNECT_REASON">DISCONNECT_REASON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SOCKET_ERROR">SOCKET_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketEvents">SocketEvents</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/MissionControlClient.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const socketIO = require(&apos;socket.io-client&apos;);
+const nanobus = require(&apos;nanobus&apos;)();
+
+/**
+ * The error types that cause the {@link SocketEvents} &apos;error&apos; event to fire.
+ * @type {Object} SOCKET_ERROR
+ * @property {string} GENERAL A general socket error.
+ * @property {string} TIMEOUT The ping to the server timed out.
+ * @property {string} NO_ATTEMPTS_LEFT The client ran out of attempts to reconnect to the server.
+ * @property {string} AUTH_FAILED The client is not granted access to the server.
+ * @since 1.0.0
+ */
+export const SOCKET_ERROR = {
+	GENERAL: &apos;GENERAL&apos;,
+	TIMEOUT: &apos;TIMEOUT&apos;,
+	NO_ATTEMPTS_LEFT: &apos;NO_ATTEMPTS_LEFT&apos;,
+	AUTH_FAILED: &apos;AUTH_FAILED&apos;
+};
+
+/**
+ * The disconnect reason that gets passed along with the {@link SocketEvents} &apos;disconnect&apos; event.
+ * @type {Object} DISCONNECT_REASON
+ * @property {string} UNKNOWN An unknown disconnect reason.
+ * @property {string} SERVER_DISCONNECT The server disconnected the client. A manual reconnect would be required.
+ * @property {string} CLIENT_DISCONNECT The client disconnected from the server. A manual reconnect would be required.
+ * @property {string} PING_TIMEOUT The ping to the server timed-out. The client will automatically try to reconnect.
+ * @since 1.0.0
+ */
+export const DISCONNECT_REASON = {
+	UNKNOWN: &apos;UNKNOWN&apos;,
+	SERVER_DISCONNECT: &apos;SERVER_DISCONNECT&apos;,
+	CLIENT_DISCONNECT: &apos;CLIENT_DISCONNECT&apos;,
+	PING_TIMEOUT: &apos;PING_TIMEOUT&apos;
+};
+
+/**
+ * As ESDoc lacks a way to properly document events, this typedef shows all the different events the client might emit.
+ * The &quot;type&quot; below is the callback argument for the listener.
+ * @typedef SocketEvents
+ * @property {void} connect Emitted on a successful connect to the server.
+ * @property {DISCONNECT_REASON} disconnect Emitted when the client disconnected from the server. The disconnect reason indicates why.
+ * @property {SOCKET_ERROR, object} error Emitted when the encounters an error. The first argument is the {@link SOCKET_ERROR} object, indicating what the error object might be.
+ * @property {Number} reconnecting Emitted once the clients starts trying to reconnect to the server. Attempt number passed to the listener.
+ *
+ * @example
+ * client.on(&apos;error&apos;, (errorType, errorData) =&gt; {});
+ * client.on(&apos;disconnect&apos;, reason =&gt; {});
+ * client.on(&apos;reconnecting&apos;, attempt =&gt; {});
+ */
+
+/**
+ * The mission control client class.
+ *
+ * You can easily build your own client implementation, this one is just easy to use and has everything you might need.
+ * @since 1.0.0
+ * @emits {connect} emit event when bar.
+ */
+export class MissionControlClient {
+	/**
+	 * The MissionControlClient constructor.
+	 *
+	 * You can easily build your own client implementation, this one is just easy to use and has everything you might need.
+	 * @param {string} url - The mission control url the client should connect to.
+	 * @param {string} authToken - The JWT authentication token that should be used to authenticate.
+	 */
+	constructor(url, authToken) {
+		/**
+		 * @type socket.io-client~Socket
+		 * @since 1.0.0
+		 */
+		this.socket = socketIO(url, {
+			query: { token: authToken }
+		});
+
+		/**
+		 * @type socket.io-client~Nanobus
+		 * @emits {SocketEvent}
+		 * @since 1.0.0
+		 */
+		this.eventBus = nanobus();
+
+		/** @type {Object&lt;eventKey&lt;string&gt;, listenerCount&lt;Number&gt;&gt;} */
+		this._subscriptions = {};
+		/** @type {Array&lt;eventKey&lt;string&gt;&gt;} */
+		this._subscribeTo = [];
+		/** @type {Array&lt;eventKey&lt;string&gt;&gt;} */
+		this._unsubscribeFrom = [];
+
+		this._setupSocketHandlers();
+	}
+
+	/**
+	 * This function sets up all the listeners for the socket (connect, disconnect, error, reconnect, etc).
+	 *
+	 * Job of this function is to unify all error events into a shape that makes more sense. See {@link SOCKET_ERROR} for the possible errors.
+	 */
+	_setupSocketHandlers() {
+		// On successful connection
+		this.socket.on(&apos;connect&apos;, () =&gt; {
+			cleanSubscriptions();
+
+			this.eventBus.emit(&apos;connect&apos;);
+		});
+
+		// On disconnect from server, reason can either be server disconnect, client disconnect or ping timeout.
+		this.socket.on(&apos;disconnect&apos;, reason =&gt; {
+			let disconnectReason;
+
+			switch (reason) {
+				case &apos;io server disconnect&apos;:
+					disconnectReason = DISCONNECT_REASON.SERVER_DISCONNECT;
+					break;
+				case &apos;io client disconnect&apos;:
+					disconnectReason = DISCONNECT_REASON.CLIENT_DISCONNECT;
+					break;
+				case &apos;ping timeout&apos;:
+					disconnectReason = DISCONNECT_REASON.CLIENT_DISCONNECT;
+					break;
+				default:
+					disconnectReason = DISCONNECT_REASON.UNKNOWN;
+			}
+
+			this.eventBus.emit(&apos;disconnect&apos;, disconnectReason);
+		});
+
+		/*
+		 * RECONNECTION
+		 */
+		// On successful reconnect, attempt is the amount of attempts needed for the reconnect.
+		// As of right now, not really needed for anything,
+		// as the connect event fires on every successful connect, even reconnects.
+		// this.socket.on(&apos;reconnect&apos;, attempt =&gt; {});
+
+		// On reconnect attempt, attempt is the current attempt number
+		this.socket.on(&apos;reconnect_attempt&apos;, attempt =&gt; {
+			this.eventBus.emit(&apos;reconnecting&apos;, attempt);
+		});
+
+		/*
+		 * ERROR HANDLING
+		 */
+		// On a general connection error, the error object is the error thrown
+		this.socket.on(&apos;connect_error&apos;, error =&gt; {
+			// TODO: determine errorType
+			this.eventBus.emit(&apos;error&apos;, SOCKET_ERROR.GENERAL, error);
+		});
+
+		// On a ping/connection timeout error, the timeout object is IDK what
+		// TODO: what is the timeout object?
+		this.socket.on(&apos;connect_timeout&apos;, timeout =&gt; {
+			this.eventBus.emit(&apos;error&apos;, SOCKET_ERROR.TIMEOUT, timeout);
+		});
+
+		// On reconnect error, dont know if needed for now
+		// this.socket.on(&apos;reconnect_error&apos;, error =&gt; {});
+
+		// On reconnection failed, fired becayse we run out of attempts
+		// and not because there is an error in the connection
+		this.socket.on(&apos;reconnect_failed&apos;, () =&gt; {
+			this.eventBus.emit(&apos;error&apos;, SOCKET_ERROR.NO_ATTEMPTS_LEFT);
+		});
+	}
+
+	/**
+	 * Listen to a socket event.
+	 *
+	 * Please note, if you want to subscribe to action or state events, please use the {@link subscribe} method.
+	 * The returned function can be used to unsubscribe from the event listener again.
+	 * This makes it possible to for example remove inline listeners.
+	 *
+	 * @param {string} event - The socket event you want to listen to.
+	 * @param {function(data: object)} listener - The listener function that will be called on event.
+	 * @return {function} Returns a function which you can use to remove the event listener.
+	 *
+	 * @since 1.0.0
+	 * @example
+	 * on(&apos;connect&apos;, () =&gt; {})
+	 * on(&apos;error&apos;, (errorType, errorObject) =&gt; {})
+	 */
+	on(event, listener) {
+		this.eventBus.on(event, listener);
+
+		return () =&gt; this.eventBus.removeListener(event, listener);
+	}
+
+	/**
+	 * Listen to a socket event, and clear it after it&apos;s been called once.
+	 *
+	 * Please note, if you want to subscribe to action or state events, please use the {@link subscribe} method.
+	 * The returned function can be used to unsubscribe from the event listener again.
+	 * This makes it possible to for example remove inline listeners.
+	 *
+	 * @param {string} event - The socket event you want to listen to.
+	 * @param {function(data: object)} listener - The listener function that will be called on event once.
+	 * @return {function} Returns a function which you can use to remove the event listener.
+	 *
+	 * @since 1.0.0
+	 * @example
+	 * once(&apos;connect&apos;, (data) =&gt; {})
+	 */
+	once(event, listener) {
+		this.eventBus.once(event, listener);
+
+		return () =&gt; this.eventBus.removeListener(event, listener);
+	}
+
+	/**
+	 * Subscribe to a server event (actions, state updates).
+	 *
+	 * To subscribe to a server event, we need to emit a &apos;subscribe&apos; event to the server so it knows
+	 * to broadcast the right events to us. This function automatically handles these &apos;subscribe&apos; and
+	 * &apos;unsubscribe&apos; events so you can simply use this method to do it. When we disconnect from
+	 * the server, this function also handles resubscribing to the events.
+	 * It returns a function that can you can use to remove the event listener again and unsubscribe from the server.
+	 *
+	 * @param {string} serverEvent - This is the server event you want to subscribe to. Keep in mind these are not general socket events, but rather state / action Mission Control events.
+	 * @param {function(data: object)} listener - The listener function that will be called on event.
+	 * @return {function} Returns a function which you can use to remove the event listener.
+	 *
+	 * @since 1.0.0
+	 * @example
+	 * client.subscribe(&apos;action:EXAMPLE:DO&apos;, (data) =&gt; {})
+	 * client.subscribe(&apos;update:stateObject&apos;, (data) =&gt; {});
+	 */
+	subscribe(serverEvent, listener) {
+		this.socket.on(serverEvent, listener);
+
+		if (!(serverEvent in this.subscriptions)) {
+			if (this.socket.connected) {
+				this.socket.emit(&apos;subscribe&apos;, {
+					event: serverEvent
+				});
+				this.subscriptions[serverEvent] = 1;
+			} else {
+				this.subscribeTo.push(serverEvent);
+			}
+		}
+
+		return () =&gt; {
+			this.socket.removeListener(serverEvent, listener);
+
+			if (this.socket.connected) {
+				this.subscriptions[serverEvent]--;
+
+				if (this.subscriptions[serverEvent] === 0) {
+					delete this.subscriptions[serverEvent];
+
+					this.socket.emit(&apos;unsubscribe&apos;, {
+						event: serverEvent
+					});
+				}
+			} else {
+				this.unsubscribeFrom.push(serverEvent);
+			}
+		};
+	}
+
+	/**
+	 * Execute an action on the mission control server.
+	 *
+	 * This method sends an &apos;action&apos; event, which the server will use to execute the action and modify
+	 * the state accordingly.
+	 *
+	 * @param {string} action - The action that you want to execute.
+	 * @param {object} data - The data you want to pass to the action function.
+	 *
+	 * @since 1.0.0
+	 * @example
+	 * client.action(&apos;EXAMPLE:DO&apos;, { parameter: &apos;example&apos; })
+	 * client.action(&apos;VIDEO-QUEUE:PUSH&apos;, { video: { url: &apos;...&apos;, format: &apos;mp4&apos; }})
+	 */
+	action(action, data) {
+		this.socket.emit(&apos;action&apos;, { action, data });
+	}
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

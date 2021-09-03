@@ -1,0 +1,1174 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import socketIO from 'socket.io-client';\nimport nanobus from 'nanobus';\n\n/**\n * The error types that cause the {@link SocketEvents} 'error' event to fire.\n * @type {Object} SOCKET_ERROR\n * @property {string} GENERAL A general socket error.\n * @property {string} TIMEOUT The ping to the server timed out.\n * @property {string} NO_ATTEMPTS_LEFT The client ran out of attempts to reconnect to the server.\n * @property {string} AUTH_INVALID_TOKEN The client is not granted access to the server due to the token being invalid.\n * @property {string} AUTH_TIMEOUT The client is not granted access to the server because the client took too long to authenticate.\n * @since 1.0.0\n */\nexport const SOCKET_ERROR = {\n\tGENERAL: 'GENERAL',\n\tTIMEOUT: 'TIMEOUT',\n\tNO_ATTEMPTS_LEFT: 'NO_ATTEMPTS_LEFT',\n\tAUTH_INVALID_TOKEN: 'AUTH_INVALID_TOKEN',\n\tAUTH_TIMEOUT: 'AUTH_TIMEOUT'\n};\n\n/**\n * The disconnect reason that gets passed along with the {@link SocketEvents} 'disconnect' event.\n * @type {Object} DISCONNECT_REASON\n * @property {string} UNKNOWN An unknown disconnect reason.\n * @property {string} SERVER_DISCONNECT The server disconnected the client. A manual reconnect would be required.\n * @property {string} CLIENT_DISCONNECT The client disconnected from the server. A manual reconnect would be required.\n * @property {string} PING_TIMEOUT The ping to the server timed-out. The client will automatically try to reconnect.\n * @since 1.0.0\n */\nexport const DISCONNECT_REASON = {\n\tUNKNOWN: 'UNKNOWN',\n\tSERVER_DISCONNECT: 'SERVER_DISCONNECT',\n\tCLIENT_DISCONNECT: 'CLIENT_DISCONNECT',\n\tPING_TIMEOUT: 'PING_TIMEOUT'\n};\n\n/**\n * As ESDoc lacks a way to properly document events, this typedef shows all the different events the client might emit.\n * The \"type\" below is the callback argument for the listener.\n * @typedef SocketEvents\n * @property {void} connect Emitted on a successful connect to the server. Called after authentication.\n * @property {DISCONNECT_REASON} disconnect Emitted when the client disconnected from the server. The disconnect reason indicates why.\n * @property {SOCKET_ERROR, object} error Emitted when the encounters an error. The first argument is the {@link SOCKET_ERROR} object, indicating what the error object might be.\n * @property {Number} reconnecting Emitted once the clients starts trying to reconnect to the server. Attempt number passed to the listener.\n *\n * @example\n * client.on('error', (errorType, errorData) => {});\n * client.on('disconnect', reason => {});\n * client.on('reconnecting', attempt => {});\n */\n\n/**\n * The mission control client class.\n *\n * You can easily build your own client implementation, this one is just easy to use and has everything you might need.\n *\n * The client hides the authentication implementation details from the user, by hijacking the `connect` event.\n * The connect event only gets called after the authentication scheme is successful.\n *\n * @since 1.0.0\n * @emits {connect} emit event when bar.\n */\nexport class MissionControlClient {\n\t/**\n\t * The MissionControlClient constructor.\n\t *\n\t * @param {string} url - The mission control url the client should connect to.\n\t * @param {string} authToken - The JWT authentication token that should be used to authenticate.\n\t */\n\tconstructor(url, authToken) {\n\t\t// URL and auth token are required parameters.\n\t\tif (!url) throw new Error('You need to pass an URL.');\n\t\tif (!authToken) throw new Error('You need to pass an Auth Token.');\n\n\t\t/**\n\t\t * The JWT authentication token that is used to authenticate.\n\t\t * @type {string}\n\t\t */\n\t\tthis.authToken = authToken;\n\n\t\t/**\n\t\t * The socket.io socket used for the communication.\n\t\t *\n\t\t * While it is possible it is recommended not to use this variable directly and to use the exposed {@link MissionControlClient#action} and {@link MissionControlClient#subscribe} methods instead.\n\t\t *\n\t\t * @type socket.io-client~Socket\n\t\t * @since 1.0.0\n\t\t */\n\t\tthis.socket = socketIO(url);\n\n\t\t/**\n\t\t * The event bus used to communicate events within the client.\n\t\t *\n\t\t * While it is possible it is recommended not to use this variable directly and to use the exposed {@link MissionControlClient#on} and {@link MissionControlClient#subscribe} methods instead.\n\t\t *\n\t\t * @type socket.io-client~Nanobus\n\t\t * @emits {SocketEvent}\n\t\t * @since 1.0.0\n\t\t */\n\t\tthis.eventBus = nanobus();\n\n\t\t/** @type {Object<eventKey<string>, listenerCount<Number>>} */\n\t\tthis._subscriptions = {};\n\t\t/** @type {Array<eventKey<string>>} */\n\t\tthis._subscribeTo = [];\n\t\t/** @type {Array<eventKey<string>>} */\n\t\tthis._unsubscribeFrom = [];\n\n\t\tthis._setupSocketHandlers();\n\t}\n\n\t/**\n\t * This function sets up all the listeners for the socket (connect, disconnect, error, reconnect, etc).\n\t *\n\t * Job of this function is to unify all error events into a shape that makes more sense. See {@link SOCKET_ERROR} for the possible errors.\n\t */\n\t_setupSocketHandlers() {\n\t\t// We hijack the on event method to call it again with the '*' event which now gets called on\n\t\t// any event.\n\t\tconst socketOnEvent = this.socket.onevent;\n\t\tthis.socket.onevent = function(packet) {\n\t\t\tconst args = packet.data || [];\n\t\t\tsocketOnEvent.call(this, packet);\n\n\t\t\tpacket.data = ['*'].concat(args);\n\t\t\tsocketOnEvent.call(this, packet); // additional call for \"*\" event\n\t\t};\n\n\t\t// This catches all other events and published them to our event bus\n\t\tthis.socket.on('*', (event, ...args) => {\n\t\t\t// Here we only pass the event to our event bus if the events arent our\n\t\t\t// own SocketEvents. If we wouldnt do this it would cause a collision\n\t\t\t// where listeners would fire twice: once for the actual socket emit and once\n\t\t\t// for our event bus. This bypasses this.\n\t\t\tif (\n\t\t\t\t!['connect', 'disconnect', 'reconnecting', 'error'].includes(\n\t\t\t\t\tevent\n\t\t\t\t)\n\t\t\t)\n\t\t\t\tthis.eventBus.emit(event, ...args);\n\t\t});\n\n\t\t// On connection we try to authenticate\n\t\tthis.socket.on('connect', () => {\n\t\t\tthis.socket.emit('authenticate', {\n\t\t\t\ttoken: this.authToken\n\t\t\t});\n\t\t});\n\n\t\t// On successful connection & authentication\n\t\tthis.socket.on('authenticated', () => {\n\t\t\t// While we still have events to subscribe to, do so on connect\n\t\t\twhile (this._subscribeTo.length > 0) {\n\t\t\t\tthis.socket.emit('subscribe', {\n\t\t\t\t\tevent: this._subscribeTo.shift()\n\t\t\t\t});\n\t\t\t}\n\n\t\t\t// While we still have events to unsubscribe from, do so on connect\n\t\t\twhile (this._unsubscribeFrom.length > 0) {\n\t\t\t\tthis.socket.emit('unsubscribe', {\n\t\t\t\t\tevent: this._unsubscribeFrom.shift()\n\t\t\t\t});\n\t\t\t}\n\n\t\t\t// We simplify the event structure here, by emitting a 'connect' event rather than a 'authenticated' event.\n\t\t\t// This essentially hides the implementation details of the authentication flow from the client user\n\t\t\t// which is what we're aiming for by making the client simple.\n\t\t\tthis.eventBus.emit('connect');\n\t\t});\n\n\t\t// On disconnect from server, reason can either be server disconnect, client disconnect or ping timeout.\n\t\tthis.socket.on('disconnect', reason => {\n\t\t\tlet disconnectReason;\n\n\t\t\tswitch (reason) {\n\t\t\t\tcase 'io server disconnect':\n\t\t\t\t\tdisconnectReason = DISCONNECT_REASON.SERVER_DISCONNECT;\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'io client disconnect':\n\t\t\t\t\tdisconnectReason = DISCONNECT_REASON.CLIENT_DISCONNECT;\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'ping timeout':\n\t\t\t\t\tdisconnectReason = DISCONNECT_REASON.CLIENT_DISCONNECT;\n\t\t\t\t\tbreak;\n\t\t\t\tdefault:\n\t\t\t\t\tdisconnectReason = DISCONNECT_REASON.UNKNOWN;\n\t\t\t}\n\n\t\t\tthis.eventBus.emit('disconnect', disconnectReason);\n\t\t});\n\n\t\t/*\n\t\t * RECONNECTION\n\t\t */\n\t\t// On successful reconnect, attempt is the amount of attempts needed for the reconnect.\n\t\t// As of right now, not really needed for anything,\n\t\t// as the connect event fires on every successful connect, even reconnects.\n\t\t// this.socket.on('reconnect', attempt => {});\n\n\t\t// On reconnect attempt, attempt is the current attempt number\n\t\tthis.socket.on('reconnect_attempt', attempt => {\n\t\t\tthis.eventBus.emit('reconnecting', attempt);\n\t\t});\n\n\t\t/*\n\t\t * ERROR HANDLING\n\t\t */\n\t\t// On a general connection error, the error object is the error thrown\n\t\tthis.socket.on('connect_error', error => {\n\t\t\t// TODO: determine errorType\n\t\t\tthis.eventBus.emit('error', SOCKET_ERROR.GENERAL, error);\n\t\t});\n\n\t\t// On a ping/connection timeout error, the timeout object is IDK what\n\t\t// TODO: what is the timeout object?\n\t\tthis.socket.on('connect_timeout', timeout => {\n\t\t\tthis.eventBus.emit('error', SOCKET_ERROR.TIMEOUT, timeout);\n\t\t});\n\n\t\t// Called when we can't authenticate because of an invalid auth token or because\n\t\t// the client took too long to authenticate.\n\t\tthis.socket.on('unauthorized', error => {\n\t\t\tconst authErrorType =\n\t\t\t\terror.type === 'TIMEOUT'\n\t\t\t\t\t? SOCKET_ERROR.AUTH_TIMEOUT\n\t\t\t\t\t: SOCKET_ERROR.AUTH_INVALID_TOKEN;\n\n\t\t\tthis.eventBus.emit('error', authErrorType, error);\n\t\t});\n\n\t\t// On reconnect error, dont know if needed for now\n\t\t// this.socket.on('reconnect_error', error => {});\n\n\t\t// On reconnection failed, fired becayse we run out of attempts\n\t\t// and not because there is an error in the connection\n\t\tthis.socket.on('reconnect_failed', () => {\n\t\t\tthis.eventBus.emit('error', SOCKET_ERROR.NO_ATTEMPTS_LEFT);\n\t\t});\n\t}\n\n\t/**\n\t * Listen to a socket event.\n\t *\n\t * Please note, if you want to subscribe to action or state events, please use the {@link subscribe} method.\n\t * The returned function can be used to unsubscribe from the event listener again.\n\t * This makes it possible to for example remove inline listeners.\n\t *\n\t * @param {string} event - The socket event you want to listen to.\n\t * @param {function(data: object)} listener - The listener function that will be called on event.\n\t * @return {function} Returns a function which you can use to remove the event listener.\n\t *\n\t * @since 1.0.0\n\t * @example\n\t * on('connect', () => {})\n\t * on('error', (errorType, errorObject) => {})\n\t */\n\ton(event, listener) {\n\t\tthis.eventBus.on(event, listener);\n\n\t\treturn () => this.eventBus.removeListener(event, listener);\n\t}\n\n\t/**\n\t * Listen to a socket event, and clear it after it's been called once.\n\t *\n\t * Please note, if you want to subscribe to action or state events, please use the {@link subscribe} method.\n\t * The returned function can be used to unsubscribe from the event listener again.\n\t * This makes it possible to for example remove inline listeners.\n\t *\n\t * @param {string} event - The socket event you want to listen to.\n\t * @param {function(data: object)} listener - The listener function that will be called on event once.\n\t * @return {function} Returns a function which you can use to remove the event listener.\n\t *\n\t * @since 1.0.0\n\t * @example\n\t * once('connect', (data) => {})\n\t */\n\tonce(event, listener) {\n\t\tthis.eventBus.once(event, listener);\n\n\t\treturn () => this.eventBus.removeListener(event, listener);\n\t}\n\n\t/**\n\t * Subscribe to a server event (actions, state updates).\n\t *\n\t * To subscribe to a server event, we need to emit a 'subscribe' event to the server so it knows\n\t * to broadcast the right events to us. This function automatically handles these 'subscribe' and\n\t * 'unsubscribe' events so you can simply use this method to do it. When we disconnect from\n\t * the server, this function also handles resubscribing to the events.\n\t * It returns a function that can you can use to remove the event listener again and unsubscribe from the server.\n\t *\n\t * @param {string} serverEvent - This is the server event you want to subscribe to. Keep in mind these are not general socket events, but rather state / action Mission Control events.\n\t * @param {function(data: object)} listener - The listener function that will be called on event.\n\t * @return {function} Returns a function which you can use to remove the event listener.\n\t *\n\t * @since 1.0.0\n\t * @example\n\t * client.subscribe('action:EXAMPLE:DO', (data) => {})\n\t * client.subscribe('update:stateObject', (data) => {});\n\t */\n\tsubscribe(serverEvent, listener) {\n\t\tthis.socket.on(serverEvent, listener);\n\n\t\tif (!(serverEvent in this._subscriptions)) {\n\t\t\tif (this.socket.connected) {\n\t\t\t\tthis.socket.emit('subscribe', {\n\t\t\t\t\tevent: serverEvent\n\t\t\t\t});\n\t\t\t\tthis._subscriptions[serverEvent] = 1;\n\t\t\t} else {\n\t\t\t\tthis._subscribeTo.push(serverEvent);\n\t\t\t}\n\t\t}\n\n\t\treturn () => {\n\t\t\tthis.socket.removeListener(serverEvent, listener);\n\n\t\t\tif (this.socket.connected) {\n\t\t\t\tthis._subscriptions[serverEvent]--;\n\n\t\t\t\tif (this._subscriptions[serverEvent] === 0) {\n\t\t\t\t\tdelete this._subscriptions[serverEvent];\n\n\t\t\t\t\tthis.socket.emit('unsubscribe', {\n\t\t\t\t\t\tevent: serverEvent\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tthis._unsubscribeFrom.push(serverEvent);\n\t\t\t}\n\t\t};\n\t}\n\n\t/**\n\t * Execute an action on the mission control server.\n\t *\n\t * This method sends an 'action' event, which the server will use to execute the action and modify\n\t * the state accordingly.\n\t *\n\t * @param {string} action - The action that you want to execute.\n\t * @param {object} data - The data you want to pass to the action function.\n\t *\n\t * @since 1.0.0\n\t * @example\n\t * client.action('EXAMPLE:DO', { parameter: 'example' })\n\t * client.action('VIDEO-QUEUE:PUSH', { video: { url: '...', format: 'mp4' }})\n\t */\n\taction(action, data) {\n\t\tthis.socket.emit('action', { action, data });\n\t}\n}\n",
+    "static": true,
+    "longname": "/Users/mat/Projects/hal-6900/mission-control-client/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "SOCKET_ERROR",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~SOCKET_ERROR",
+    "access": "public",
+    "export": true,
+    "importPath": "mission-control-client/src/index.js",
+    "importStyle": "{SOCKET_ERROR}",
+    "description": "The error types that cause the {@link SocketEvents} 'error' event to fire.",
+    "lineNumber": 14,
+    "since": "1.0.0",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "GENERAL",
+        "description": "A general socket error."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "TIMEOUT",
+        "description": "The ping to the server timed out."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "NO_ATTEMPTS_LEFT",
+        "description": "The client ran out of attempts to reconnect to the server."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "AUTH_INVALID_TOKEN",
+        "description": "The client is not granted access to the server due to the token being invalid."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "AUTH_TIMEOUT",
+        "description": "The client is not granted access to the server because the client took too long to authenticate."
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "DISCONNECT_REASON",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~DISCONNECT_REASON",
+    "access": "public",
+    "export": true,
+    "importPath": "mission-control-client/src/index.js",
+    "importStyle": "{DISCONNECT_REASON}",
+    "description": "The disconnect reason that gets passed along with the {@link SocketEvents} 'disconnect' event.",
+    "lineNumber": 31,
+    "since": "1.0.0",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "UNKNOWN",
+        "description": "An unknown disconnect reason."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "SERVER_DISCONNECT",
+        "description": "The server disconnected the client. A manual reconnect would be required."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "CLIENT_DISCONNECT",
+        "description": "The client disconnected from the server. A manual reconnect would be required."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "PING_TIMEOUT",
+        "description": "The ping to the server timed-out. The client will automatically try to reconnect."
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "typedef",
+    "name": "SocketEvents",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~SocketEvents",
+    "access": "public",
+    "description": "As ESDoc lacks a way to properly document events, this typedef shows all the different events the client might emit.\nThe \"type\" below is the callback argument for the listener.",
+    "examples": [
+      "client.on('error', (errorType, errorData) => {});\nclient.on('disconnect', reason => {});\nclient.on('reconnecting', attempt => {});"
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "void"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "connect",
+        "description": "Emitted on a successful connect to the server. Called after authentication."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "DISCONNECT_REASON"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "disconnect",
+        "description": "Emitted when the client disconnected from the server. The disconnect reason indicates why."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "SOCKET_ERROR, object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "Emitted when the encounters an error. The first argument is the {@link SOCKET_ERROR} object, indicating what the error object might be."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reconnecting",
+        "description": "Emitted once the clients starts trying to reconnect to the server. Attempt number passed to the listener."
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ],
+      "optional": false,
+      "name": "SocketEvents"
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "class",
+    "name": "MissionControlClient",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~MissionControlClient",
+    "access": "public",
+    "export": true,
+    "importPath": "mission-control-client/src/index.js",
+    "importStyle": "{MissionControlClient}",
+    "description": "The mission control client class.\n\nYou can easily build your own client implementation, this one is just easy to use and has everything you might need.\n\nThe client hides the authentication implementation details from the user, by hijacking the `connect` event.\nThe connect event only gets called after the authentication scheme is successful.",
+    "lineNumber": 64,
+    "since": "1.0.0",
+    "emits": [
+      {
+        "types": [
+          "connect"
+        ],
+        "description": "emit event when bar."
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#constructor",
+    "access": "public",
+    "description": "The MissionControlClient constructor.",
+    "lineNumber": 71,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "The mission control url the client should connect to."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": "The JWT authentication token that should be used to authenticate."
+      }
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "authToken",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#authToken",
+    "access": "public",
+    "description": "The JWT authentication token that is used to authenticate.",
+    "lineNumber": 80,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "socket",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#socket",
+    "access": "public",
+    "description": "The socket.io socket used for the communication.\n\nWhile it is possible it is recommended not to use this variable directly and to use the exposed {@link MissionControlClient#action} and {@link MissionControlClient#subscribe} methods instead.",
+    "lineNumber": 90,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "eventBus",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#eventBus",
+    "access": "public",
+    "description": "The event bus used to communicate events within the client.\n\nWhile it is possible it is recommended not to use this variable directly and to use the exposed {@link MissionControlClient#on} and {@link MissionControlClient#subscribe} methods instead.",
+    "lineNumber": 101,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "emits": [
+      {
+        "types": [
+          "SocketEvent"
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "_subscriptions",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#_subscriptions",
+    "access": "private",
+    "description": null,
+    "lineNumber": 104,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object<eventKey<string>, listenerCount<Number>>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "_subscribeTo",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#_subscribeTo",
+    "access": "private",
+    "description": null,
+    "lineNumber": 106,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<eventKey<string>>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "_unsubscribeFrom",
+    "memberof": "src/index.js~MissionControlClient",
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#_unsubscribeFrom",
+    "access": "private",
+    "description": null,
+    "lineNumber": 108,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<eventKey<string>>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "_setupSocketHandlers",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#_setupSocketHandlers",
+    "access": "private",
+    "description": "This function sets up all the listeners for the socket (connect, disconnect, error, reconnect, etc).\n\nJob of this function is to unify all error events into a shape that makes more sense. See {@link SOCKET_ERROR} for the possible errors.",
+    "lineNumber": 118,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "on",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#on",
+    "access": "public",
+    "description": "Listen to a socket event.\n\nPlease note, if you want to subscribe to action or state events, please use the {@link subscribe} method.\nThe returned function can be used to unsubscribe from the event listener again.\nThis makes it possible to for example remove inline listeners.",
+    "examples": [
+      "on('connect', () => {})\non('error', (errorType, errorObject) => {})"
+    ],
+    "lineNumber": 259,
+    "since": "1.0.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "event",
+        "description": "The socket event you want to listen to."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(data: object)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "listener",
+        "description": "The listener function that will be called on event."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": "Returns a function which you can use to remove the event listener."
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "once",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#once",
+    "access": "public",
+    "description": "Listen to a socket event, and clear it after it's been called once.\n\nPlease note, if you want to subscribe to action or state events, please use the {@link subscribe} method.\nThe returned function can be used to unsubscribe from the event listener again.\nThis makes it possible to for example remove inline listeners.",
+    "examples": [
+      "once('connect', (data) => {})"
+    ],
+    "lineNumber": 280,
+    "since": "1.0.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "event",
+        "description": "The socket event you want to listen to."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(data: object)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "listener",
+        "description": "The listener function that will be called on event once."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": "Returns a function which you can use to remove the event listener."
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "subscribe",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#subscribe",
+    "access": "public",
+    "description": "Subscribe to a server event (actions, state updates).\n\nTo subscribe to a server event, we need to emit a 'subscribe' event to the server so it knows\nto broadcast the right events to us. This function automatically handles these 'subscribe' and\n'unsubscribe' events so you can simply use this method to do it. When we disconnect from\nthe server, this function also handles resubscribing to the events.\nIt returns a function that can you can use to remove the event listener again and unsubscribe from the server.",
+    "examples": [
+      "client.subscribe('action:EXAMPLE:DO', (data) => {})\nclient.subscribe('update:stateObject', (data) => {});"
+    ],
+    "lineNumber": 304,
+    "since": "1.0.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "serverEvent",
+        "description": "This is the server event you want to subscribe to. Keep in mind these are not general socket events, but rather state / action Mission Control events."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(data: object)"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "listener",
+        "description": "The listener function that will be called on event."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": "Returns a function which you can use to remove the event listener."
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "action",
+    "memberof": "src/index.js~MissionControlClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~MissionControlClient#action",
+    "access": "public",
+    "description": "Execute an action on the mission control server.\n\nThis method sends an 'action' event, which the server will use to execute the action and modify\nthe state accordingly.",
+    "examples": [
+      "client.action('EXAMPLE:DO', { parameter: 'example' })\nclient.action('VIDEO-QUEUE:PUSH', { video: { url: '...', format: 'mp4' }})"
+    ],
+    "lineNumber": 351,
+    "since": "1.0.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The action that you want to execute."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "The data you want to pass to the action function."
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "# Mission Control Client – mission-control-client\n\n> A client for Node.js and the browser to easily connect and interact with the Mission Control system.\n\n[![NPM Version][npm-image]][npm-url]\n[![Downloads Stats][npm-downloads]][npm-url]\n\n##### [Docs][docs]\n\nThis mission-control-client is used to simplify my custom applications that I write for the Mission Control home automation system.\nThis library makes it very easy to add features to every little thing I built for it.\n\n<!-- ![](header.png) -->\n\n## Installation\n\n```sh\nnpm install mission-control-client --save\n```\n\n## Usage Examples\n\nThe library can then be used like this:\n\n```js\nimport { MissionControlClient } from 'mission-control-client';\n\nconst client = new MissionControlClient('http://localhost', '<API-KEY>');\n\n// Listen to socket events\nclient.on('connect', () => {\n\tconsole.log('We have a connection');\n});\n\nclient.on('disconnect', reason => {\n\tconsole.log('Disconnected again for reason:', reason);\n});\n\n// Listen to mission control events.\nclient.subscribe('action:VIDEO-QUEUE:PUSH', data => {\n\t/* ... */\n});\nclient.subscribe('update:videoQueue', data => {\n\t/* ... */\n});\n\n// Run an action\nclient.action('NOTIFICATION:CREATE', {\n\t/* data */\n});\n```\n\n_For more examples and usage, please refer to the [Docs][docs]._\n\n## Handling Auth\n\nAuth is done using JSON Web Tokens. Due to a limitation in Socket.io, we can't detect an 'unauthorized' response, as Socket.io simply won't send any responses before we authenticated. Keep that in mind if you run into connection errors as they might be auth-based. Check the Mission Control console, it will tell you if a socket client is unauthorized.\n\n## Development Setup\n\nDescribe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.\n\n```sh\n# To build the docs\nnpm run docs\n\n# To build\nnpm run build\n```\n\n## Release History\n\n-   1.0.0\n    -   The first proper release\n\n## Authors\n\nLukas Mateffy – [@Capevace](https://twitter.com/capevace) – [mateffy.me](https://mateffy.me)\n\nDistributed under the MIT license. See `LICENSE` for more information.\n\n## Contributing\n\n1. Fork it (<https://github.com/capevace/mission-control-client/fork>)\n2. Create your feature branch (`git checkout -b feature/fooBar`)\n3. Commit your changes (`git commit -am 'Add some fooBar'`)\n4. Push to the branch (`git push origin feature/fooBar`)\n5. Create a new Pull Request\n\n<!-- Markdown link & img dfn's -->\n\n[npm-image]: https://img.shields.io/npm/v/mission-control-client.svg?style=flat-square\n[npm-url]: https://npmjs.org/package/mission-control-client\n[npm-downloads]: https://img.shields.io/npm/dm/mission-control-client.svg?style=flat-square\n[wiki]: https://github.com/capevace/mission-control-client/wiki\n[docs]: https://capevace.github.io/mission-control-client\n",
+    "longname": "/Users/mat/Projects/hal-6900/mission-control-client/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"mission-control-client\",\n  \"version\": \"1.1.0\",\n  \"description\": \"A client for Node.js and the browser to easily connect and interact with the Mission Control system.\",\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.mjs\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"scripts\": {\n    \"docs\": \"./node_modules/.bin/esdoc\",\n    \"build\": \"./node_modules/.bin/microbundle --target node --no-compress\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Capevace/mission-control-client.git\"\n  },\n  \"author\": \"Lukas Mateffy (@Capevace)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/Capevace/mission-control-client/issues\"\n  },\n  \"homepage\": \"https://github.com/Capevace/mission-control-client#readme\",\n  \"dependencies\": {\n    \"nanobus\": \"^4.4.0\",\n    \"socket.io-client\": \"^2.2.0\"\n  },\n  \"devDependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"microbundle\": \"^0.11.0\"\n  },\n  \"esdoc\": {\n    \"source\": \"./src\",\n    \"destination\": \"./docs\",\n    \"plugins\": [\n      {\n        \"name\": \"esdoc-standard-plugin\",\n        \"option\": {\n          \"lint\": {\n            \"enable\": true\n          },\n          \"coverage\": {\n            \"enable\": true\n          },\n          \"brand\": {\n            \"title\": \"Mission Control Client\",\n            \"description\": \"A client for Node.js and the browser to easily connect and interact with the Mission Control system.\",\n            \"author\": \"https://twitter.com/capevace/\"\n          }\n        }\n      }\n    ]\n  }\n}\n",
+    "longname": "/Users/mat/Projects/hal-6900/mission-control-client/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

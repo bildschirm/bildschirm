@@ -1,0 +1,74 @@
+{
+  "name": "@bildschirm/client",
+  "version": "0.0.1-alpha.0",
+  "description": "Bildschirm JS client",
+  "author": "Lukas Mateffy <github@mateffy.me>",
+  "homepage": "https://github.com/bildschirm/bildschirm#readme",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "src": "src",
+    "dist": "dist",
+    "docs": "docs",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bildschirm/bildschirm.git"
+  },
+  "scripts": {
+    "build-webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+	"build": "NODE_ENV=production tsc --module commonjs && esbuild dist/index.js --bundle --outfile=dist/index.js --allow-overwrite",
+    "docs": "./node_modules/.bin/esdoc"
+  },
+  "bugs": {
+    "url": "https://github.com/bildschirm/bildschirm/issues"
+  },
+  "dependencies": {
+    "auto-bind": "^4.0.0",
+    "buffer": "^6.0.3",
+    "esbuild": "^0.12.25",
+    "nanobus": "^4.4.0",
+    "socket.io-client": "^4.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "laravel-mix": "^6.0.13",
+    "microbundle": "^0.13.0",
+    "ts-loader": "^9.2.5"
+  },
+  "esdoc": {
+    "source": "./src",
+    "destination": "./docs",
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin",
+        "option": {
+          "lint": {
+            "enable": true
+          },
+          "coverage": {
+            "enable": true
+          },
+          "brand": {
+            "title": "Mission Control Client",
+            "description": "A client for Node.js and the browser to easily connect and interact with the Mission Control system.",
+            "author": "https://twitter.com/capevace/"
+          }
+        }
+      }
+    ]
+  }
+}
