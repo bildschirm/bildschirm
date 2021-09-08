@@ -28,13 +28,14 @@
   },
   "scripts": {
     "build-webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-	"build": "NODE_ENV=production tsc --module commonjs && esbuild dist/index.js --bundle --outfile=dist/index.js --allow-overwrite",
+    "build": "NODE_ENV=production tsc --module commonjs && esbuild dist/index.js --bundle --outfile=dist/index.js --allow-overwrite",
     "docs": "./node_modules/.bin/esdoc"
   },
   "bugs": {
     "url": "https://github.com/bildschirm/bildschirm/issues"
   },
   "dependencies": {
+    "@bildschirm/types": "^0.0.1-alpha.0",
     "auto-bind": "^4.0.0",
     "buffer": "^6.0.3",
     "esbuild": "^0.12.25",

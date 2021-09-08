@@ -1,25 +1,24 @@
 import socketIO, { Socket } from 'socket.io-client';
 import Nanobus from 'Nanobus';
 import autoBind from 'auto-bind';
-
 import {
-	SyncResponse,
-	DisconnectReason,
-	Logger,
-	SocketError,
-	EventListener,
-	StateListener,
-} from './types';
-
-export * from './types';
+	SyncErrorType,
+	SyncDisconnectReason,
+	ISyncClient,
+	ISyncService,
+	ISyncResponse,
+	IStateChangeListener,
+	IState,
+} from '@bildschirm/types';
+import { Logger } from './types';
 
 /**
  * As ESDoc lacks a way to properly document events, this typedef shows all the different events the client might emit.
  * The "type" below is the callback argument for the listener.
  * @typedef SocketEvents
  * @property {void} connect Emitted on a successful connect to the server. Called after authentication.
- * @property {DisconnectReason} disconnect Emitted when the client disconnected from the server. The disconnect reason indicates why.
- * @property {SocketError, object} error Emitted when the encounters an error. The first argument is the {@link SocketError} object, indicating what the error object might be.
+ * @property {SyncDisconnectReason} disconnect Emitted when the client disconnected from the server. The disconnect reason indicates why.
+ * @property {SyncSocketError, object} error Emitted when the encounters an error. The first argument is the {@link SocketError} object, indicating what the error object might be.
  * @property {Number} reconnecting Emitted once the clients starts trying to reconnect to the server. Attempt number passed to the listener.
  *
  * @example
@@ -39,7 +38,7 @@ export * from './types';
  * @since 0.0.1
  * @emits {connect} emit event when bar.
  */
-export class BildschirmClient {
+export class BildschirmClient implements ISyncClient {
 	logger: Logger;
 
 	/**
@@ -68,7 +67,8 @@ export class BildschirmClient {
 
 	ready = false;
 
-	protected services: Record<string, { listeners: number }> = {};
+	protected services: Record<string, { listeners: number; state: IState }> =
+		{};
 	protected stateCache: Record<string, object> = {};
 
 	/**
@@ -102,9 +102,19 @@ export class BildschirmClient {
 			error: (...args) => console.error(...title, ...args),
 		};
 
-		this._setupSocketHandlers();
+		this.setupSocketHandlers();
 
 		autoBind(this);
+	}
+
+	readyListeners: Function[] = [];
+
+	waitReady(): Promise<void> {
+		return this.ready
+			? Promise.resolve()
+			: new Promise((resolve) => {
+					this.readyListeners.push(resolve);
+			  });
 	}
 
 	/**
@@ -112,7 +122,7 @@ export class BildschirmClient {
 	 *
 	 * Job of this function is to unify all error events into a shape that makes more sense. See {@link SocketError} for the possible errors.
 	 */
-	_setupSocketHandlers() {
+	protected setupSocketHandlers() {
 		this.socket.onAny((packet) => {
 			const [event, ...args] = packet.data || [];
 
@@ -145,7 +155,7 @@ export class BildschirmClient {
 				this.logger.debug('auth:complete', response);
 				this.logger.debug('ready');
 
-				// Re-Subscribe to all services after reconnect
+				// Re-Subscribe to all services that we're already subscribed to after reconnect
 				for (const service in this.services) {
 					this.logger.debug('subscribe to service:', service);
 
@@ -165,11 +175,14 @@ export class BildschirmClient {
 				// This essentially hides the implementation details of the authentication flow from the client user
 				// which is what we're aiming for by making the client simple.
 
+				// Call every ready listener
+				this.readyListeners.forEach((listener) => listener());
+
 				this.eventBus.emit('connect');
 			} catch (e) {
 				this.ready = false;
 
-				this.eventBus.emit('error', SocketError.AUTH_FAILED, e);
+				this.eventBus.emit('error', SyncErrorType.AUTH_FAILED, e);
 			}
 		});
 
@@ -179,16 +192,16 @@ export class BildschirmClient {
 
 			switch (reason) {
 				case 'io server disconnect':
-					disconnectReason = DisconnectReason.SERVER_DISCONNECT;
+					disconnectReason = SyncDisconnectReason.SERVER_DISCONNECT;
 					break;
 				case 'io client disconnect':
-					disconnectReason = DisconnectReason.CLIENT_DISCONNECT;
+					disconnectReason = SyncDisconnectReason.CLIENT_DISCONNECT;
 					break;
 				case 'ping timeout':
-					disconnectReason = DisconnectReason.CLIENT_DISCONNECT;
+					disconnectReason = SyncDisconnectReason.CLIENT_DISCONNECT;
 					break;
 				default:
-					disconnectReason = DisconnectReason.UNKNOWN;
+					disconnectReason = SyncDisconnectReason.UNKNOWN;
 			}
 
 			this.ready = false;
@@ -231,7 +244,7 @@ export class BildschirmClient {
 					);
 				}
 
-				this.stateCache[serviceName] = state;
+				this.services[serviceName].state = state;
 				this.eventBus.emit(`sync:${serviceName}`, state);
 			} catch (e) {
 				this.reportError(e);
@@ -250,7 +263,7 @@ export class BildschirmClient {
 			this.ready = false;
 
 			// TODO: determine errorType
-			this.eventBus.emit('error', SocketError.GENERAL, error);
+			this.eventBus.emit('error', SyncErrorType.GENERAL, error);
 		});
 
 		// On a ping/connection timeout error, the timeout object is IDK what
@@ -258,7 +271,7 @@ export class BildschirmClient {
 		this.socket.on('connect_timeout', (timeout) => {
 			this.ready = false;
 
-			this.eventBus.emit('error', SocketError.TIMEOUT, timeout);
+			this.eventBus.emit('error', SyncErrorType.TIMEOUT, timeout);
 		});
 
 		// Called when we can't authenticate because of an invalid auth token or because
@@ -266,7 +279,7 @@ export class BildschirmClient {
 		this.socket.on('authentication_timeout', ({ error }) => {
 			this.ready = false;
 
-			this.eventBus.emit('error', SocketError.AUTH_TIMEOUT, error);
+			this.eventBus.emit('error', SyncErrorType.AUTH_TIMEOUT, error);
 		});
 
 		// On reconnect error, dont know if needed for now
@@ -277,7 +290,7 @@ export class BildschirmClient {
 		this.socket.on('reconnect_failed', () => {
 			this.ready = false;
 
-			this.eventBus.emit('error', SocketError.NO_ATTEMPTS_LEFT);
+			this.eventBus.emit('error', SyncErrorType.NO_ATTEMPTS_LEFT);
 		});
 	}
 
@@ -292,7 +305,7 @@ export class BildschirmClient {
 	 */
 	_socketEmit(event: string, data: object) {
 		return new Promise((resolve, reject) => {
-			this.socket.emit(event, data, (response: SyncResponse) => {
+			this.socket.emit(event, data, (response: ISyncResponse) => {
 				if (response.error) {
 					return reject(new Error(response.error.message));
 				}
@@ -363,87 +376,112 @@ export class BildschirmClient {
 	 * client.subscribe('action:EXAMPLE:DO', (data) => {})
 	 * client.subscribe('update:stateObject', (data) => {});
 	 */
-	async service(name: string, listener: StateListener) {
-		const errorHandledListener = async (state: object) => {
+	async service(
+		name: string,
+		listener?: IStateChangeListener
+	): Promise<ISyncService> {
+		// A subscribed service will fetch the state and then
+		// receive updates when the state changes.
+		// A static service does not subscribe to changes, so it will
+		// only fetch the state once.
+		if (listener) {
+			return await this.makeSubscribedService(name, listener);
+		} else {
+			return await this.makeStaticService(name);
+		}
+	}
+
+	protected async makeStaticService(name: string): Promise<ISyncService> {
+		const _this = this;
+
+		const { state } = (await this._socketEmit('state', {
+			service: name,
+		})) as { state: IState };
+
+		return {
+			async invoke(
+				actionName: string,
+				data: object
+			): Promise<ISyncResponse> {
+				return await _this.invoke(name, actionName, data);
+			},
+			state,
+			unsubscribe: () => {},
+		};
+	}
+
+	protected async makeSubscribedService(
+		name: string,
+		listener: IStateChangeListener
+	): Promise<ISyncService> {
+		await this.waitReady();
+
+		let state: IState;
+
+		const errorHandledListener = async (newState: IState) => {
 			try {
-				await listener(state);
+				state = newState;
+
+				await listener(newState);
 			} catch (e) {
 				this.logger.error('error in service state handler ' + name, e);
 
 				this.reportError(e);
 			}
 		};
-
 		this.eventBus.on(`sync:${name}`, errorHandledListener);
 
-		// If we find "older" state in the cache, we send that for first paint
-		const staleState = this.stateCache[name];
-		if (staleState) {
-			this.logger.debug('found stale state for service', name);
-			errorHandledListener(staleState);
-		}
-
 		if (name in this.services) {
-			this.logger.debug('already subscribed to sync from', name);
-
 			this.services[name].listeners++;
+			state = this.services[name].state;
 		} else {
+			const { state: fetchedState } = (await this._socketEmit(
+				'subscribe',
+				{
+					service: name,
+				}
+			)) as { state: IState };
+
 			this.services[name] = {
 				listeners: 1,
+				state: fetchedState,
 			};
 
-			// If the client is ready, that means
-			// it has already started subscriptions for things in this.services.
-			// We have to connect manually here.
-			// However this listener is registered in this.services now
-			// so on next automatic resubscribe (after disconnect) it will be included.
-			if (this.ready) {
-				this.logger.debug('subscribe to service:', name);
-
-				const { state } = (await this._socketEmit('subscribe', {
-					service: name,
-				})) as { state: object };
-
-				this.stateCache[name] = state;
-			}
+			state = fetchedState;
 		}
-
-		const unsubscribe = () => {
-			this.logger.debug('listener unsubscribed from service', name);
-
-			this.eventBus.removeListener(`sync:${name}`, listener);
-			this.services[name].listeners--;
-
-			if (this.services[name].listeners <= 0) {
-				this.logger.debug('removing service from sync', name);
-
-				delete this.services[name];
-
-				if (this.ready) {
-					this._socketEmit('unsubscribe', {
-						service: name,
-					}).catch(this.reportError);
-				}
-			}
-		};
 
 		// Getters (ready, state) don't allow arrow functions
 		// so we have the good old JS 'this' problem again.
 		const _this = this;
 
 		return {
-			async action(actionName: string, data: object) {
-				await _this.action(name, actionName, data);
+			async invoke(
+				actionName: string,
+				data: object
+			): Promise<ISyncResponse> {
+				return await _this.invoke(name, actionName, data);
 			},
-			get state() {
-				if (!(name in _this.stateCache)) {
-					throw new Error(
-						`No cached state found for service ${name}`
-					);
+			get state(): IState {
+				return state;
+			},
+			async unsubscribe() {
+				_this.logger.debug('listener unsubscribed from service', name);
+
+				_this.eventBus.removeListener(`sync:${name}`, listener);
+				_this.services[name].listeners--;
+
+				if (_this.services[name].listeners <= 0) {
+					_this.logger.debug('removing service from sync', name);
+
+					delete _this.services[name];
+
+					await _this.waitReady();
+
+					await _this._socketEmit('unsubscribe', {
+						service: name,
+					});
 				}
-				return _this.stateCache[name];
 			},
-			unsubscribe,
 		};
 	}
 
@@ -462,12 +500,18 @@ export class BildschirmClient {
 	 * client.action('EXAMPLE:DO', { parameter: 'example' })
 	 * client.action('VIDEO-QUEUE:PUSH', { video: { url: '...', format: 'mp4' }})
 	 */
-	action(service: string, action: string, data: object) {
-		return new Promise((resolve, reject) => {
+	invoke(
+		service: string,
+		action: string,
+		data: object
+	): Promise<ISyncResponse> {
+		return new Promise(async (resolve, reject) => {
+			await this.waitReady();
+
 			this.socket.emit(
 				'action',
 				{ service, action, data },
-				(res: SyncResponse) => {
+				(res: ISyncResponse) => {
 					if (res.error) {
 						reject(new Error(res.error.message));
 					} else {
@@ -484,7 +528,7 @@ export class BildschirmClient {
 	 */
 	reportError(error: unknown) {
 		if (error instanceof Error)
-			this.eventBus.emit('error', SocketError.GENERAL, error);
+			this.eventBus.emit('error', SyncErrorType.GENERAL, error);
 
 		this.logger.error('error reported', error);
 	}

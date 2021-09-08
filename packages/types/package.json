@@ -1,0 +1,38 @@
+{
+  "name": "@bildschirm/types",
+  "version": "0.0.1-alpha.0",
+  "description": "Bildschirm JS types",
+  "author": "Lukas Mateffy <github@mateffy.me>",
+  "homepage": "https://github.com/bildschirm/bildschirm#readme",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "src": "src",
+    "dist": "dist",
+    "docs": "docs",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bildschirm/bildschirm.git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production tsc --module commonjs"
+  },
+  "bugs": {
+    "url": "https://github.com/bildschirm/bildschirm/issues"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.2.5"
+  }
+}

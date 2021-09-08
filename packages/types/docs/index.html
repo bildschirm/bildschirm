@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | Mission Control Client</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A client for Node.js and the browser to easily connect and interact with the Mission Control system."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Mission Control Client"><meta property="twitter:description" content="A client for Node.js and the browser to easily connect and interact with the Mission Control system."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Capevace/mission-control-client"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/index.js~MissionControlClient.html">MissionControlClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DISCONNECT_REASON">DISCONNECT_REASON</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SOCKET_ERROR">SOCKET_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SocketEvents">SocketEvents</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="mission-control-client-&#x2013;-mission-control-client">Mission Control Client &#x2013; mission-control-client</h1><blockquote>
+<p>A client for Node.js and the browser to easily connect and interact with the Mission Control system.</p>
+</blockquote>
+<p><a href="https://npmjs.org/package/mission-control-client"><img src="https://img.shields.io/npm/v/mission-control-client.svg?style=flat-square" alt="NPM Version"></a>
+<a href="https://npmjs.org/package/mission-control-client"><img src="https://img.shields.io/npm/dm/mission-control-client.svg?style=flat-square" alt="Downloads Stats"></a></p>
+<h5 id="-a-href--https---capevace-github-io-mission-control-client--docs--a-"><a href="https://capevace.github.io/mission-control-client">Docs</a></h5><p>This mission-control-client is used to simplify my custom applications that I write for the Mission Control home automation system.
+This library makes it very easy to add features to every little thing I built for it.</p>
+<p><!-- ![](header.png) -->
+</p>
+<h2 id="installation">Installation</h2><pre><code class="lang-sh"><code class="source-code prettyprint">npm install mission-control-client --save</code>
+</code></pre>
+<h2 id="usage-examples">Usage Examples</h2><p>The library can then be used like this:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { MissionControlClient } from &apos;mission-control-client&apos;;
+
+const client = new MissionControlClient(&apos;http://localhost&apos;, &apos;&lt;API-KEY&gt;&apos;);
+
+// Listen to socket events
+client.on(&apos;connect&apos;, () =&gt; {
+    console.log(&apos;We have a connection&apos;);
+});
+
+client.on(&apos;disconnect&apos;, reason =&gt; {
+    console.log(&apos;Disconnected again for reason:&apos;, reason);
+});
+
+// Listen to mission control events.
+client.subscribe(&apos;action:VIDEO-QUEUE:PUSH&apos;, data =&gt; {
+    /* ... */
+});
+client.subscribe(&apos;update:videoQueue&apos;, data =&gt; {
+    /* ... */
+});
+
+// Run an action
+client.action(&apos;NOTIFICATION:CREATE&apos;, {
+    /* data */
+});</code>
+</code></pre>
+<p><em>For more examples and usage, please refer to the <a href="https://capevace.github.io/mission-control-client">Docs</a>.</em></p>
+<h2 id="handling-auth">Handling Auth</h2><p>Auth is done using JSON Web Tokens. Due to a limitation in Socket.io, we can&apos;t detect an &apos;unauthorized&apos; response, as Socket.io simply won&apos;t send any responses before we authenticated. Keep that in mind if you run into connection errors as they might be auth-based. Check the Mission Control console, it will tell you if a socket client is unauthorized.</p>
+<h2 id="development-setup">Development Setup</h2><p>Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint"># To build the docs
+npm run docs
+
+# To build
+npm run build</code>
+</code></pre>
+<h2 id="release-history">Release History</h2><ul>
+<li>1.0.0<ul>
+<li>The first proper release</li>
+</ul>
+</li>
+</ul>
+<h2 id="authors">Authors</h2><p>Lukas Mateffy &#x2013; <a href="https://twitter.com/capevace">@Capevace</a> &#x2013; <a href="https://mateffy.me">mateffy.me</a></p>
+<p>Distributed under the MIT license. See <code>LICENSE</code> for more information.</p>
+<h2 id="contributing">Contributing</h2><ol>
+<li>Fork it (<a href="https://github.com/capevace/mission-control-client/fork">https://github.com/capevace/mission-control-client/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b feature/fooBar</code>)</li>
+<li>Commit your changes (<code>git commit -am &apos;Add some fooBar&apos;</code>)</li>
+<li>Push to the branch (<code>git push origin feature/fooBar</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+<p><!-- Markdown link & img dfn's -->
+</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
