@@ -14,7 +14,7 @@ module.exports = class HTTPRouter extends express.Router {
 
 	/**
 	 * Proxy an HTTP route to another target URL.
-	 * This is useful if you want to proxy something through mission-control auth.
+	 * This is useful if you want to proxy something through bildschirm auth.
 	 */
 	proxy(route, target, options = {}) {
 		this.use(

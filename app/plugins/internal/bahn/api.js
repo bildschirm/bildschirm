@@ -1,5 +1,5 @@
 const createHafas = require('db-hafas');
-const hafas = createHafas('mission-control');
+const hafas = createHafas('bildschirm');
 
 const stations = {
 	'Lüneburg': '626772',

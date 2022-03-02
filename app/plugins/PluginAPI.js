@@ -7,7 +7,7 @@ const Joi = require('joi');
 /**
  * Plugin API api passed to the plugin init function.
  * 
- * This api used to interact with the mission-control system.
+ * This api used to interact with the bildschirm system.
  * It contains methods for auth, permissions, http, the sync system, database, etc.
  * 
  * The API is supposed to be developer friendly and well documented 

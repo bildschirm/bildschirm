@@ -20,10 +20,10 @@ const argv = require('./helpers/argv');
 const pkg = require('../package.json');
 
 const basePath = false // Todo: Linux detection here
-	? '/etc/mission-control'
-	: require('os').homedir() + '/.mission-control';
+	? '/etc/bildschirm'
+	: require('os').homedir() + '/.bildschirm';
 
-let config = require('rc')('mission-control', {
+let config = require('rc')('bildschirm', {
 	version: pkg.version,
 	basePath,
 	logLevel: 'http',
@@ -31,8 +31,8 @@ let config = require('rc')('mission-control', {
 	name: 'Bildschirm',
 	auth: {
 		url: '/sso',
-		issuer: 'mission-control-sso',
-		audience: 'mission-control',
+		issuer: 'bildschirm-sso',
+		audience: 'bildschirm',
 		secret: 'applepie',
 		port: 3001,
 		proxy: true

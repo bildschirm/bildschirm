@@ -92,7 +92,7 @@ class Service {
 		this.logger = Logger.createLogger(`Service:${name}`, 'magenta');
 
 		/**
-		 * Injected mission-control core
+		 * Injected bildschirm core
 		 *
 		 * Used in action context as well
 		 *

@@ -66,10 +66,10 @@ module.exports = function routes(APP, API, service) {
 	// 	} else {
 	// 		const indexFile = await fs.readFile(config.spotify.path + '/index.html')
 	// 			.toString()
-	// 			.replace(/<MISSION_CONTROL_URL>/g, config.http.url)
-	// 			.replace(/<MISSION_CONTROL_TOKEN>/g, req.session.jwt)
-	// 			.replace(/<MISSION_CONTROL_SPOTIFY_TOKEN>/g, state.get().spotify.accessToken)
-	// 			.replace(/<MISSION_CONTROL_SPOTIFY_EXPIRY>/g, state.get().spotify.expiresAt);
+	// 			.replace(/<BILDSCHIRM_URL>/g, config.http.url)
+	// 			.replace(/<BILDSCHIRM_TOKEN>/g, req.session.jwt)
+	// 			.replace(/<BILDSCHIRM_SPOTIFY_TOKEN>/g, state.get().spotify.accessToken)
+	// 			.replace(/<BILDSCHIRM_SPOTIFY_EXPIRY>/g, state.get().spotify.expiresAt);
 
 	// 		res.type('text/html').send(indexFile);
 	// 	}

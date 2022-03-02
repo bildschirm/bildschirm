@@ -1,5 +1,5 @@
 /*
- * ### Sync – The heart of mission-control
+ * ### Sync – The heart of bildschirm
  *
  * Sync is the main logic of Bildschirm. It hosts the global event loop and
  * is responsible for managing state and synchronising it with connected clients.

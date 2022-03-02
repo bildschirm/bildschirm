@@ -1,5 +1,5 @@
 <div align="center">
-	<a href="https://mateffy.me/mission-control-project">
+	<a href="https://bildschirm.dev">
 		<img src="resources/screenshot-2.0.0-rc6.png">
 	</a>
 	<h1>Bildschirm</h1>
@@ -7,9 +7,9 @@
 		Opinionated JavaScript framework for building real-time dashboards
 	</p>
 	<p>
-		<a href="https://mission-control.js.org">Project Homepage</a>
+		<a href="https://bildschirm.dev">Project Homepage</a>
 		<span>&nbsp;|&nbsp;</span>
-		<a href="https://mission-control.js.org">Docs</a>
+		<a href="https://bildschirm.dev/docs">Docs</a>
 	</p>
 </div>
 
@@ -42,10 +42,8 @@ Bildschirm aims to provide all those features out-of-the-box so you can get to c
 
 ## Installation
 
-Note: 2.0.0 is currently in pre-release but more stable than 0.x.x versions.
-
 ```sh
-$ npm install -g @capevace/mission-control@next
+$ npm install -g bildschirm
 ```
 
 ## Usage
@@ -53,14 +51,14 @@ $ npm install -g @capevace/mission-control@next
 You can now start the server like you would any binary.
 
 ```sh
-$ mission-control --version
+$ bildschirm --version
 v2.0.0-rc8
 ```
 
 ### Options
 
 ```
-Usage: mission-control [options]
+Usage: bildschirm [options]
 
 Options:
   -V, --version       output the version number
@@ -71,7 +69,7 @@ Options:
 
 ### Config
 
-A config file for mission-control will be created at `$HOME_DIR/.mission-control/config`. This can also be used to configure mission-control. However, options passed as command line arguments override settings in this file.
+A config file for bildschirm will be created at `$HOME_DIR/.bildschirm/config`. This can also be used to configure bildschirm. However, options passed as command line arguments override settings in this file.
 
 ## Screenshots
 
@@ -124,7 +122,7 @@ A config file for mission-control will be created at `$HOME_DIR/.mission-control
 
 ### Running Bildschirm on port 80
 
-On Linux, running an http server on port 80 requires root priviliges. Generally this isn't a problem as you can simply `sudo mission-control -p 80` which works, but this approach falls apart when using systemd.
+On Linux, running an http server on port 80 requires root priviliges. Generally this isn't a problem as you can simply `sudo bildschirm -p 80` which works, but this approach falls apart when using systemd.
 
 I found this workaround which seems to be the safest option to use instead:
 
@@ -153,7 +151,7 @@ Distributed under the MIT license. See `LICENSE` for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/capevace/mission-control/fork>)
+1. Fork it (<https://github.com/capevace/bildschirm/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)

@@ -15,8 +15,8 @@ class Tokens {
 	generate(user) {
 		return jwt.sign({ user: { username: user.username } }, this.sessionSecret, {
 			expiresIn: 86400,
-			issuer: 'mission-control',
-			audience: 'mission-control:api'
+			issuer: 'bildschirm',
+			audience: 'bildschirm:api'
 		});
 	}
 
@@ -24,8 +24,8 @@ class Tokens {
 		try {
 			const { user } = jwt.verify(token, this.sessionSecret, {
 				expiresIn: 86400,
-				issuer: 'mission-control',
-				audience: 'mission-control:api'
+				issuer: 'bildschirm',
+				audience: 'bildschirm:api'
 			});
 			
 

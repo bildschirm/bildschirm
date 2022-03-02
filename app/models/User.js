@@ -80,7 +80,7 @@ User.UserRole = Object.freeze({
  * @type {User}
  */
 User.systemUser = Object.freeze({
-	username: 'mission-control',
+	username: 'bildschirm',
 	displayName: 'Bildschirm',
 
 	avatarUrl: null,

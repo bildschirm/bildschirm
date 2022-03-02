@@ -3,7 +3,7 @@ const uuid = require('@helpers/uuid');
 const autoBind = require('auto-bind');
 
 /**
- * _Core_ is mission-control's main class and is responsible for initializing submodules
+ * _Core_ is bildschirm's main class and is responsible for initializing submodules
  * and managing dependency injection.
  *
  * **The main submodules are:**
@@ -24,7 +24,7 @@ const autoBind = require('auto-bind');
  */
 module.exports = class Core {
 	/**
-	 * Create a new mission-control core.
+	 * Create a new bildschirm core.
 	 */
 	constructor(config, logging) {
 		if (!config) {

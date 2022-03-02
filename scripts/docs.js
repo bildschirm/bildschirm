@@ -18,7 +18,7 @@ async function run() {
 	await fs.copyFile(path.join(root, 'resources/screenshot-2.0.0-rc6.png'), path.join(dest, 'img/screenshot-2.0.0-rc6.png'));
 
 	console.log('Writing Files...');
-	await fs.writeFile(path.join(dest, 'CNAME'), 'mission-control.js.org');
+	await fs.writeFile(path.join(dest, 'CNAME'), 'bildschirm.dev');
 
 
 	console.log('Finished! 🚀');

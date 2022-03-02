@@ -25,7 +25,7 @@ If you want to know more about how Bildschirm works, here's a section about [Con
 Installing Bildschirm is very simple and works the same on any platform (though it is primarily tested on macOS).
 
 ```sh
-npm i -g @capevace/mission-control
+npm i -g bildschirm
 ```
 
 This will install the `mission-control` CLI. You're ready to go!

@@ -1,5 +1,5 @@
 <script type="module">
-    const { dashboard } = MISSION_CONTROL;
+    const { dashboard } = BILDSCHIRM;
 
     const header = {
         template: `
@@ -43,8 +43,8 @@
             clearInterval(this.refreshTimer);
         },
 		components: {
-			ServiceProvider: MISSION_CONTROL.components.headless.ServiceProvider,
-			ClockProvider: MISSION_CONTROL.components.headless.ClockProvider,
+			ServiceProvider: BILDSCHIRM.components.headless.ServiceProvider,
+			ClockProvider: BILDSCHIRM.components.headless.ClockProvider,
 		}
     };
 

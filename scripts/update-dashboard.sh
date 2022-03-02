@@ -4,7 +4,7 @@ if [ $1 ];
 then
 	dashboardRoot=$1
 else
-	dashboardRoot=$(echo ../mission-control-dashboard)
+	dashboardRoot=$(echo ../bildschirm-dashboard)
 fi
 
 if [ -f "package.json" ]; 

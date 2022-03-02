@@ -109,7 +109,7 @@ class HTTP {
 		// Add session to express chain
 		this.app.use(
 			session({
-				name: 'mission-control',
+				name: 'bildschirm',
 				secret: sessionSecret,
 			})
 		);
@@ -124,7 +124,7 @@ class HTTP {
 		// Parse host domain from headers.
 		// On every request, we add a hostUrl to the
 		// request object. This can't be done statically
-		// as mission-control may be used with multiple domains,
+		// as bildschirm may be used with multiple domains,
 		// so instead we take the 'Host' header and validate it
 		// against a list of allowed URLs so it can't be forged.
 		this.app.use(attachHostUrlMiddleware(this.config));

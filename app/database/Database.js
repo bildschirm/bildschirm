@@ -8,7 +8,7 @@ const UsersAPI = require('@database/api/UsersAPI');
  * The Database object
  * Currently the "Database" is pretty much a JSON key value store.
  * However this will be updated when switching to SQLite
- * https://github.com/Capevace/mission-control/issues/17
+ * https://github.com/Capevace/bildschirm/issues/17
  * @public
  * @namespace database
  */

@@ -34,11 +34,10 @@
 		<noscript class="block m-auto w-full h-screen flex items-center justify-center text-purple-300 text-2xl max-w-md leading-8">
 			<p class="font-bold">
 				You need to enable JavaScript to use Bildschirm.
-				<a class="mt-2 block link font-semibold" href="https://github.com/Capevace/mission-control/issues/39">We're working on a solution tho.</a>
 			</p>
 		</noscript>
 		<div id="app" class="w-full">
-			<mission-control-ui></mission-control-ui>
+			<bildschirm-ui></bildschirm-ui>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -47,14 +46,14 @@
 		}
 	</script>
 	<script type="text/javascript">
-		window.MISSION_CONTROL_API_KEY = '{{SERVER_REPLACE_API_KEY}}';
-		window.MISSION_CONTROL_URL = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}`
+		window.BILDSCHIRM_API_KEY = '{{SERVER_REPLACE_API_KEY}}';
+		window.BILDSCHIRM_URL = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}`
 			|| '{{SERVER_REPLACE_URL}}';
-		window.MISSION_CONTROL_USER = {{SERVER_REPLACE_USER_JSON}};
-		window.MISSION_CONTROL_PAGES = {{SERVER_REPLACE_PAGES_JSON}};
-		window.MISSION_CONTROL_COMPONENTS_DICT = {{SERVER_REPLACE_COMPONENTS_DICT}};
-		window.MISSION_CONTROL_THEME = '{{SERVER_REPLACE_THEME}}';
-		// window.MISSION_CONTROL_INITIAL_STATE = {{SERVER_REPLACE_STATE_JSON}};
+		window.BILDSCHIRM_USER = {{SERVER_REPLACE_USER_JSON}};
+		window.BILDSCHIRM_PAGES = {{SERVER_REPLACE_PAGES_JSON}};
+		window.BILDSCHIRM_COMPONENTS_DICT = {{SERVER_REPLACE_COMPONENTS_DICT}};
+		window.BILDSCHIRM_THEME = '{{SERVER_REPLACE_THEME}}';
+		// window.BILDSCHIRM_INITIAL_STATE = {{SERVER_REPLACE_STATE_JSON}};
 	</script>
 	<script type="text/javascript" src="/assets/js/index.js"></script>
 
@@ -62,8 +61,8 @@
 	
 	<script type="text/javascript">
 		// Call init components after all components have been registered
-		if (window.MISSION_CONTROL && window.MISSION_CONTROL.dashboard)
-			window.MISSION_CONTROL.dashboard.initComponents();
+		if (window.BILDSCHIRM && window.BILDSCHIRM.dashboard)
+			window.BILDSCHIRM.dashboard.initComponents();
 	</script>
 
 	<link
@@ -74,10 +73,10 @@
 	<script type="text/javascript">
 		if (document.fonts) {
 			document.fonts.ready
-				.then(function () { window.MISSION_CONTROL.dashboard.setReady(true) });
+				.then(function () { window.BILDSCHIRM.dashboard.setReady(true) });
 		} else {
-			if (window.MISSION_CONTROL && window.MISSION_CONTROL.dashboard)
-				window.MISSION_CONTROL.dashboard.setReady(true);
+			if (window.BILDSCHIRM && window.BILDSCHIRM.dashboard)
+				window.BILDSCHIRM.dashboard.setReady(true);
 		}
 	</script>
 </html>

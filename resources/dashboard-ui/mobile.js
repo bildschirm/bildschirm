@@ -19679,8 +19679,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   n.r(e);
   var r = {
-    missionControlUrl: window.MISSION_CONTROL_URL,
-    socketUrl: window.MISSION_CONTROL_URL
+    missionControlUrl: window.BILDSCHIRM_URL,
+    socketUrl: window.BILDSCHIRM_URL
   },
       i = n(0),
       o = n.n(i);
@@ -20337,8 +20337,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       data: e
     });
   };
-  var H = window.MISSION_CONTROL_API_KEY;
-  H || console.error("No API key found in window.MISSION_CONTROL_API_KEY!");
+  var H = window.BILDSCHIRM_API_KEY;
+  H || console.error("No API key found in window.BILDSCHIRM_API_KEY!");
   var U = new B(r.socketUrl, H);
 
   function W(t, e) {
@@ -20364,7 +20364,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }), U.on("disconnect", function (t) {
     console.log("Disconnected from Bildschirm. Reason:", t), T.commit("setConnectionStatus", "disconnected");
   }), U.on("error", function (t, e) {
-    console.error("Error:", t, e), t === $ && T.commit("setConnectionStatus", "disconnected"), t === D && (T.commit("setConnectionStatus", "disconnected"), window.location.href = "".concat(window.MISSION_CONTROL_URL, "/auth/login"));
+    console.error("Error:", t, e), t === $ && T.commit("setConnectionStatus", "disconnected"), t === D && (T.commit("setConnectionStatus", "disconnected"), window.location.href = "".concat(window.BILDSCHIRM_URL, "/auth/login"));
   }), U.on("initial-state", function (t) {
     console.log("Received Initial State:", t), T.commit("fullUpdateMcState", t.state);
   }), U.subscribe("update", function (t) {
@@ -21949,7 +21949,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       attrs: {
         href: "https://github.com/homebridge/homebridge"
       }
-    }, [t._v("homebridge")]), t._v(" pin in config (found in ~/.mission-control/config) or by specifying the "), n("pre", {
+    }, [t._v("homebridge")]), t._v(" pin in config (found in ~/.bildschirm/config) or by specifying the "), n("pre", {
       staticClass: "inline font-mono "
     }, [t._v("--homebridge-pin [pin]")]), t._v(" CLI option for devices to be listed here.\n\t\t")])], 2)]);
   }, [], !1, null, null, null).exports,
