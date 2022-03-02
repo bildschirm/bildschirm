@@ -177,7 +177,7 @@ ${`.  . .-. .-. .-. .-. .-. . .   .-. .-. . . .-. .-. .-. .
 |\\/|  |  \`-. \`-.  |  | | |\\|   |   | | |\\|  |  |(  | | |   
 '  ' '-' '-' '-' '-' '-' ' '   '-' '-' ' '  '  ' ' '-' '-' `}
 
-Mission Control available at ${chalk.cyan(url)}
+Bildschirm available at ${chalk.cyan(url)}
 `;
 
 	module.exports._log(message); // eslint-disable-line no-console
@@ -207,7 +207,7 @@ module.exports.logConfig = function logConfig(config) {
 	const spotifyCredentialsPresent = config.spotify.clientId && config.spotify.secret;
 	
 	module.exports._log(
-		chalk`=== {bold Mission Control Config} ===
+		chalk`=== {bold Bildschirm Config} ===
 Version:		${config.version}
 Log Level:		${config.logLevel}
 DB Path:		{cyan ${config.databasePath}}

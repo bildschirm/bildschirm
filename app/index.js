@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 /*
- * Mission Control
+ * Bildschirm
  *
  * This file starts the server.
  * Everything is setup in here.

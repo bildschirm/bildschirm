@@ -3,7 +3,7 @@
     &lt;a href="https://mateffy.me/mission-control-project"&gt;
         &lt;img src="resources/screenshot-2.0.0-rc6.png"&gt;
     &lt;/a&gt;
-    &lt;h1&gt;Mission Control&lt;/h1&gt;
+    &lt;h1&gt;Bildschirm&lt;/h1&gt;
     &lt;p&gt;
         Opinionated JavaScript framework for building real-time dashboards
     &lt;/p&gt;
@@ -22,7 +22,7 @@
 </p>
 <p>Beginning a real-time web project, like building your own home dashboard, can be a tedious and time-consuming process.
 Coding lots of boilerplate for authentication, authorization and data communication isn’t fun at all. By the time you get to building the thing you wanted you got bored and moved on to the next.
-Mission Control aims to provide all those features out-of-the-box so you can get to creating what matters right away.</p>
+Bildschirm aims to provide all those features out-of-the-box so you can get to creating what matters right away.</p>
 <h2 id="features">Features</h2>
 <hr />
 <ul>
@@ -60,20 +60,20 @@ v2.0.0-rc8</code></pre>
 
 Options:
   -V, --version       output the version number
-  -u, --url &lt;url&gt;     the url mission control is reachable at
-  -p, --port &lt;port&gt;   the port to use for mission control
+  -u, --url &lt;url&gt;     the url Bildschirm is reachable at
+  -p, --port &lt;port&gt;   the port to use for Bildschirm
   -h, --help          display help for command</code></pre><h3 id="config">Config</h3>
 <p>A config file for mission-control will be created at <code>$HOME_DIR/.mission-control/config</code>. This can also be used to configure mission-control. However, options passed as command line arguments override settings in this file.</p>
 <h2 id="screenshots">Screenshots</h2>
 <hr />
-<p><img src="resources/screenshot-2.0.0-rc6.png" alt="Mission Control Screenshot" title="Mission Control Screenshot" style="max-width: 100%;"></p>
+<p><img src="resources/screenshot-2.0.0-rc6.png" alt="Bildschirm Screenshot" title="Bildschirm Screenshot" style="max-width: 100%;"></p>
 <h2 id="changelog">Changelog</h2>
 <hr />
 <h3 id="version-200--pre-release-">Version 2.0.0 (pre-release)</h3>
 <ul>
 <li>Completely redesigned dashboard UI</li>
 <li>Introduction of a flexible plugin system</li>
-<li>Authentication is now handled by Mission Control itself, <a href="https://github.com/capevace/single-sign-on">single-sign-on</a> is no longer required</li>
+<li>Authentication is now handled by Bildschirm itself, <a href="https://github.com/capevace/single-sign-on">single-sign-on</a> is no longer required</li>
 <li>Users now have profiles, which will be integrated with a solid permission system</li>
 <li>Tons of bug fixes</li>
 </ul>
@@ -112,7 +112,7 @@ Options:
 </ul>
 <h2 id="faq">FAQ</h2>
 <hr />
-<h3 id="running-mission-control-on-port-80">Running Mission Control on port 80</h3>
+<h3 id="running-mission-control-on-port-80">Running Bildschirm on port 80</h3>
 <p>On Linux, running an http server on port 80 requires root priviliges. Generally this isn't a problem as you can simply <code>sudo mission-control -p 80</code> which works, but this approach falls apart when using systemd.</p>
 <p>I found this workaround which seems to be the safest option to use instead:</p>
 <pre><code class="sh">sudo apt-get install libcap2-bin

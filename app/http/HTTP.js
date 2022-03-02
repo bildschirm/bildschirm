@@ -17,7 +17,7 @@ const dashboardRoutes = require('./routes/dashboard');
 const attachHostUrlMiddleware = require('./middleware/add-host-url');
 
 /**
- * Initialize the main HTTP server for the mission control sysyem.
+ * Initialize the main HTTP server for the Bildschirm sysyem.
  *
  * All HTTP communications run through this server, although third-party dependencies
  * might still create their own HTTP servers.
@@ -27,14 +27,14 @@ class HTTP {
 	/**
 	 * Create a HTTP server instance.
 	 *
-	 * @param  {Core}   core          - Mission Control core
+	 * @param  {Core}   core          - Bildschirm core
 	 * @param  {string} sessionSecret - The session secret used for cookies and JWT token
 	 */
 	constructor(core, sessionSecret) {
 		const { config, sync, database, auth, logging } = core;
 
 		/**
-		 * Mission Control Config
+		 * Bildschirm Config
 		 *
 		 * @protected
 		 * @type {Config}

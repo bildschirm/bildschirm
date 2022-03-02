@@ -40,7 +40,7 @@
   },
   "generic-info-block-78626": {
     "service": "telemetry",
-    "label": "Mission Control Version",
+    "label": "Bildschirm Version",
     "objectPath": "stats.version"
   },
   "generic-info-block-10583": {

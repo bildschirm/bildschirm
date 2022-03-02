@@ -81,7 +81,7 @@ User.UserRole = Object.freeze({
  */
 User.systemUser = Object.freeze({
 	username: 'mission-control',
-	displayName: 'Mission Control',
+	displayName: 'Bildschirm',
 
 	avatarUrl: null,
 

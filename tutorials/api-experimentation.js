@@ -245,7 +245,7 @@ io.on((socket) => {
 // Client side
 const sync = require('@sync');
 
-// Core is always subscribed, every Mission Control Dashboard instance gets this state
+// Core is always subscribed, every Bildschirm Dashboard instance gets this state
 const core = sync.service('core') || sync.core();
 
 const service = sync.service('system-info');

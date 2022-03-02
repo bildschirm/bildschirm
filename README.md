@@ -2,7 +2,7 @@
 	<a href="https://mateffy.me/mission-control-project">
 		<img src="resources/screenshot-2.0.0-rc6.png">
 	</a>
-	<h1>Mission Control</h1>
+	<h1>Bildschirm</h1>
 	<p>
 		Opinionated JavaScript framework for building real-time dashboards
 	</p>
@@ -19,7 +19,7 @@
 
 Beginning a real-time web project, like building your own home dashboard, can be a tedious and time-consuming process.
 Coding lots of boilerplate for authentication, authorization and data communication isn’t fun at all. By the time you get to building the thing you wanted you got bored and moved on to the next.
-Mission Control aims to provide all those features out-of-the-box so you can get to creating what matters right away.
+Bildschirm aims to provide all those features out-of-the-box so you can get to creating what matters right away.
 
 
 ## Features
@@ -64,8 +64,8 @@ Usage: mission-control [options]
 
 Options:
   -V, --version       output the version number
-  -u, --url <url>     the url mission control is reachable at
-  -p, --port <port>   the port to use for mission control
+  -u, --url <url>     the url Bildschirm is reachable at
+  -p, --port <port>   the port to use for Bildschirm
   -h, --help          display help for command
 ```
 
@@ -75,7 +75,7 @@ A config file for mission-control will be created at `$HOME_DIR/.mission-control
 
 ## Screenshots
 
-![Mission Control Screenshot](resources/screenshot-2.0.0-rc6.png "Mission Control Screenshot")
+![Bildschirm Screenshot](resources/screenshot-2.0.0-rc6.png "Bildschirm Screenshot")
 
 ## Changelog
 
@@ -83,7 +83,7 @@ A config file for mission-control will be created at `$HOME_DIR/.mission-control
 
 - Completely redesigned dashboard UI
 - Introduction of a flexible plugin system
-- Authentication is now handled by Mission Control itself, [single-sign-on](https://github.com/capevace/single-sign-on) is no longer required
+- Authentication is now handled by Bildschirm itself, [single-sign-on](https://github.com/capevace/single-sign-on) is no longer required
 - Users now have profiles, which will be integrated with a solid permission system
 - Tons of bug fixes
 
@@ -122,7 +122,7 @@ A config file for mission-control will be created at `$HOME_DIR/.mission-control
 
 ## FAQ
 
-### Running Mission Control on port 80
+### Running Bildschirm on port 80
 
 On Linux, running an http server on port 80 requires root priviliges. Generally this isn't a problem as you can simply `sudo mission-control -p 80` which works, but this approach falls apart when using systemd.
 

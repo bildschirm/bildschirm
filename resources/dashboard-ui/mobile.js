@@ -20358,11 +20358,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   T.commit("setConnectionStatus", "connecting"), U.on("connect", function () {
-    T.commit("setConnectionStatus", "connected"), console.log("Connected to Mission Control.");
+    T.commit("setConnectionStatus", "connected"), console.log("Connected to Bildschirm.");
   }), U.on("reconnecting", function () {
     T.commit("setConnectionStatus", "connecting");
   }), U.on("disconnect", function (t) {
-    console.log("Disconnected from Mission Control. Reason:", t), T.commit("setConnectionStatus", "disconnected");
+    console.log("Disconnected from Bildschirm. Reason:", t), T.commit("setConnectionStatus", "disconnected");
   }), U.on("error", function (t, e) {
     console.error("Error:", t, e), t === $ && T.commit("setConnectionStatus", "disconnected"), t === D && (T.commit("setConnectionStatus", "disconnected"), window.location.href = "".concat(window.MISSION_CONTROL_URL, "/auth/login"));
   }), U.on("initial-state", function (t) {
@@ -22868,7 +22868,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       staticClass: "block text-indigo-light text-center text-base flex flex-wrap content-center justify-center"
     }, [n("span", {
       staticClass: "w-full"
-    }, [t._v("Mission Control")]), t._v(" "), n("span", {
+    }, [t._v("Bildschirm")]), t._v(" "), n("span", {
       staticClass: "text-xs font-normal"
     }, [t._v("v" + t._s(t.systemInfo.version))])]), t._v(" "), n("router-link", {
       staticClass: "w-5 relative flex",
@@ -22998,7 +22998,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       staticClass: "w-5 fill-current text-main"
     })], 1), t._v(" "), n("h1", {
       staticClass: "block w-full text-indigo-light text-center text-base"
-    }, [t._v("\n\t\tMission Control\n\t")]), t._v(" "), n("router-link", {
+    }, [t._v("\n\t\tBildschirm\n\t")]), t._v(" "), n("router-link", {
       staticClass: "w-5 relative flex",
       attrs: {
         to: "/notifications"

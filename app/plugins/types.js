@@ -35,7 +35,7 @@
  * @property  {Auth}     auth     - The Auth module
  * @property  {HTTP}     http     - The HTTP module
  * @property  {Sync}     sync     - The Sync instance
- * @property  {Config}   config   - The Mission Control config
+ * @property  {Config}   config   - The Bildschirm config
  * @property  {Logging}  logging  - The logging module
  * @property  {Database} database - The database instance
  */

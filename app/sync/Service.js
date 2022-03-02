@@ -49,7 +49,7 @@ class Service {
 	 * A Sync engine service
 	 * @param  {string} name         - Service name / identifier
 	 * @param  {object} initialState - Initial service state
-	 * @param  {Core}   core         - Mission Control core (dependency injection)
+	 * @param  {Core}   core         - Bildschirm core (dependency injection)
 	 */
 	constructor(name, initialState, core) {
 		/**

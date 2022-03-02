@@ -28,7 +28,7 @@ let config = require('rc')('mission-control', {
 	basePath,
 	logLevel: 'http',
 	debug: false,
-	name: 'Mission Control',
+	name: 'Bildschirm',
 	auth: {
 		url: '/sso',
 		issuer: 'mission-control-sso',
@@ -76,7 +76,7 @@ if (!fs.existsSync(config.basePath + '/config')) {
 	logger.warn('Config file not found. Creating...');
 
 	fs.writeFileSync(config.basePath + '/config',
-		`; Mission Control Config File
+		`; Bildschirm Config File
 
 ; Enable debug mode here
 ;debug=true

@@ -50,6 +50,6 @@ module.exports = function adminControls({
 	return {
 		internal: true,
 		version: '0.0.1',
-		description: 'Mission Control lifecycle controls',
+		description: 'Bildschirm lifecycle controls',
 	};
 };

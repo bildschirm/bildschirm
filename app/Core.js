@@ -7,7 +7,7 @@ const autoBind = require('auto-bind');
  * and managing dependency injection.
  *
  * **The main submodules are:**
- * 	- `config`: Mission Control configuration
+ * 	- `config`: Bildschirm configuration
  * 	- `logging`: Logging submodule
  * 	- `database`: Main database instance
  * 	- `auth`: Authentication & Permissions submodule
@@ -76,7 +76,7 @@ module.exports = class Core {
 
 		this.progress('start http', 0.4);
 
-		// Initialize the main mission control http server
+		// Initialize the main Bildschirm http server
 		this.http = new HTTP(this, sessionSecret);
 
 		this.progress('start socket', 0.5);

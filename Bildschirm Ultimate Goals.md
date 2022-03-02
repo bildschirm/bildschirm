@@ -1,4 +1,4 @@
-# Mission Control Goals
+# Bildschirm Goals
 
 ## 2.0.0
 - Single-binary

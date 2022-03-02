@@ -1,7 +1,7 @@
 /**
  * ### The Socket Module
  * The socket module handles most communications with clients.
- * Pure HTTP is actually used very rarely within Mission Control,
+ * Pure HTTP is actually used very rarely within Bildschirm,
  * even though the interfaces for it are actually there.
  * <br>
  * Sockets have the advantage that they're real-time, which is very useful for home automation.

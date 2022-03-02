@@ -58,7 +58,7 @@ class PluginAPI {
 	 */
 	constructor(name, dependencies) {
 		/**
-		 * Mission Control config instance
+		 * Bildschirm config instance
 		 * @type {Config}
 		 * @example
 		 * 	const { config } = api;

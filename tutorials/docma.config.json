@@ -16,7 +16,7 @@
 	"dest": "./docs",
 	"app": {
 		"routing": "path",
-		"title": "Mission Control Documentation",
+		"title": "Bildschirm Documentation",
 		"favicon": "resources/favicon.png",
 		"entrance": "content:welcome"
 	},
@@ -29,7 +29,7 @@
 		"path": "docma-template-mission-control",
 		"options": {
 			"title": {
-				"label": "Mission Control",
+				"label": "Bildschirm",
 				"href": "/"
 			},
 			"logo": {

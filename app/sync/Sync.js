@@ -1,7 +1,7 @@
 /*
  * ### Sync – The heart of mission-control
  *
- * Sync is the main logic of mission control. It hosts the global event loop and
+ * Sync is the main logic of Bildschirm. It hosts the global event loop and
  * is responsible for managing state and synchronising it with connected clients.
  * The state can include like system information, HomeKit devices or anything
  * plugins wish to make available to all clients.
@@ -66,7 +66,7 @@ const Service = require('./Service');
 class Sync {
 	/**
 	 * Create a new sync engine
-	 * @param {Core} core - Mission Control core
+	 * @param {Core} core - Bildschirm core
 	 */
 	constructor(core) {
 		/**
@@ -78,7 +78,7 @@ class Sync {
 		};
 
 		/**
-		 * Mission Control core
+		 * Bildschirm core
 		 * @type {Core}
 		 */
 		this.core = core;
