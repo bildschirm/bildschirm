@@ -15,7 +15,7 @@
 
 <br>
 
-
+> I'm planning to release v1.0.0 sometime in Q2 2022, however during 0.x.x the API is considered *unstable* and might change unannounced.
 
 Beginning a real-time web project, like building your own home dashboard, can be a tedious and time-consuming process.
 Coding lots of boilerplate for authentication, authorization and data communication isn’t fun at all. By the time you get to building the thing you wanted you got bored and moved on to the next.
@@ -77,7 +77,7 @@ A config file for bildschirm will be created at `$HOME_DIR/.bildschirm/config`. 
 
 ## Changelog
 
-### Version 2.0.0 (pre-release)
+### Version 0.3.0
 
 - Completely redesigned dashboard UI
 - Introduction of a flexible plugin system
@@ -85,35 +85,35 @@ A config file for bildschirm will be created at `$HOME_DIR/.bildschirm/config`. 
 - Users now have profiles, which will be integrated with a solid permission system
 - Tons of bug fixes
 
-### Version 0.5.4
+### Version 0.2.4
 
 - Rewrote logging system
 
-### Version 0.5.3
+### Version 0.2.3
 
 - Added COVID widget to dashboard
 
-### Version 0.5.2
+### Version 0.2.2
 
 - Fixed bahn algorithm skipping not displaying trains with SEV present
 
-### Version 0.5.1
+### Version 0.2.1
 
 - Fixed dashboard layout now being loaded from database correctly
 
-### Version 0.5.0
+### Version 0.2.0
 
 - New Dashboard is now customizeable
 
-### Version 0.4.2
+### Version 0.1.2
 
 - Fixes error preventing the auth proxy from returning properly
 
-### Version 0.4.1
+### Version 0.1.1
 
 - Fixes some minor security issues with dependencies
 
-### Version 0.4.0
+### Version 0.1.0
 
 - The SSO server is now being proxied by default. This can be disabled with the `--no-proxy` option or by disabling it in the config file.
 - Instead of localhost, the default url is now the local ip

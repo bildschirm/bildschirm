@@ -1,6 +1,6 @@
 {
 	"name": "bildschirm",
-	"version": "0.0.1",
+	"version": "0.2.0",
 	"description": " Opinionated JavaScript framework for building real-time dashboards",
 	"main": "app/index.js",
 	"scripts": {
