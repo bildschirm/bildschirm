@@ -64,8 +64,8 @@ let config = require('rc')('bildschirm', {
 	},
 	databasePath: basePath + '/database.json',
 	storagePath: basePath + '/storage',
+	// Environment variable for this would be: BILDSCHIRM_PLUGINS__PATHS
 	plugins: {
-		what: ';op;',
 		paths: [path.resolve(basePath, 'plugins/*'), path.resolve(basePath, 'plugins/*.js')]
 	},
 }, { 
