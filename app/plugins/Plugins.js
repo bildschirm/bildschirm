@@ -2,9 +2,12 @@ const path = require('path');
 const fs = require('fs/promises');
 const EventEmitter = require('events');
 const autoBind = require('auto-bind');
+const globCallback = require('glob');
+const glob = require('util').promisify(globCallback);
 
 const PluginAPI = require('./PluginAPI');
 
+const blockedFolders = ['**/.git/**', '**/node_modules/**', '**/.nuxt/**', '**/.config/**', '**/package.json', '**/package-lock.json'];
 const filterOutDisabledPlugins = (filename) => !filename.startsWith('_');
 
 
@@ -26,7 +29,7 @@ class Plugins extends EventEmitter {
 		this.logger = logging.createLogger('Plugins');
 		this.logger.debug('initializing plugins');
 
-		this.pluginsDir = path.resolve(config.basePath, 'plugins');
+		this.pluginGlobs = config.plugins.paths;
 		this.pluginService = this.setupPluginDataService(sync);
 		this.plugins = {};
 
@@ -47,6 +50,7 @@ class Plugins extends EventEmitter {
 			//for (const pluginPath of pluginPaths) {
 			const initPromises = pluginPaths
 				.map(pluginPath => ({ path: pluginPath, name: path.parse(pluginPath).name }))
+				.filter(plugin => !blockedFolders.includes(plugin.name) && !plugin.name.startsWith('_')) // Filter out special folders like .git or node_modules
 				.map(async ({ path, name }) => new Promise(async (resolve, reject) => {
 					try {
 						const pluginFactory = require(path);
@@ -94,34 +98,43 @@ class Plugins extends EventEmitter {
 	}
 
 	async getPluginPaths() {
-		const defaultPluginsDir = path.resolve(__dirname, 'internal');
-
+		// Final paths list to require / load
 		let paths = [];
 
+		// Load internal plugins
+		const internalPluginsDir = path.join(__dirname, 'internal');
+
 		try {
-			const files = await fs.readdir(defaultPluginsDir);
+			const files = await fs.readdir(internalPluginsDir);
 
 			// Make paths absolute
-			paths = paths.concat(
-				files
-					.filter(filterOutDisabledPlugins)
-					.map(file => path.resolve(defaultPluginsDir, file))
-			);
+			paths = files
+				.map(file => path.resolve(internalPluginsDir, file));
 		} catch(e) {
-			this.logger.error('Could not read default plugin path', defaultPluginsDir, e);
+			this.logger.error('Could not read default plugin path', internalPluginsDir, e);
 		}
 
 		try {
-			const files = await fs.readdir(this.pluginsDir);
-
-			// Make paths absolute
-			paths = paths.concat(
-				files
-					.filter(filterOutDisabledPlugins)
-					.map(file => path.resolve(this.pluginsDir, file))
+			const readPluginsInDirectory = async (dir) => {
+				console.log(dir);
+				return await glob(dir, { ignore: blockedFolders });
+			};
+			const pluginSearchResults = await Promise.allSettled(
+				this.pluginGlobs.map(readPluginsInDirectory)
 			);
+
+			for (const index in pluginSearchResults) {
+				const result = pluginSearchResults[index];
+
+				if (result.status === 'fulfilled') {
+					// These are found plugins
+					paths = paths.concat(result.value);
+				} else {
+					this.logger.error('Could not find plugins in directory:', this.pluginGlobs[index], result.reason);
+				}
+			}
 		} catch(e) {
-			this.logger.error('Could not read plugin path', this.pluginsDir, e);
+			this.logger.error('Could not read custom plugins', this.pluginGlobs, e);
 		}
 		
 		// TODO: Add paths from plugins globally installed via NPM

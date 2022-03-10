@@ -1,3 +1,4 @@
+const express = require('express');
 const HTTPRouter = require('./HTTPRouter');
 
 /**
@@ -54,6 +55,10 @@ class PluginHTTPAPI extends HTTPRouter {
 		 * @public
 		 */
 		this.proxyLogLevel = 'warn';
+	}
+
+	serveStatic(...args) {
+		return express.static(...args);
 	}
 
 	// get(path) {

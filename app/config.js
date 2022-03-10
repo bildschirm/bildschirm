@@ -64,6 +64,17 @@ let config = require('rc')('bildschirm', {
 	},
 	databasePath: basePath + '/database.json',
 	storagePath: basePath + '/storage',
+	plugins: {
+		what: ';op;',
+		paths: [path.resolve(basePath, 'plugins/*'), path.resolve(basePath, 'plugins/*.js')]
+	},
+}, { 
+	// Empty argv, to avoid rc also parsing them and overwriting our defaults :/
+	argv: {
+		remain: [],
+		cooked: [],
+		original: []
+	}
 });
 
 if (!fs.existsSync(config.basePath)) {
@@ -134,6 +145,14 @@ if (argv.debug) {
 
 if (argv.proxy) {
 	config.auth.proxy = argv.proxy;
+}
+
+if (argv.plugins) {
+	if (Array.isArray(argv.plugins)) {
+		config.plugins.paths = argv.plugins.map(dir => path.resolve(process.cwd(), dir));
+	} else {
+		config.plugins.paths = [path.resolve(process.cwd(), argv.plugins)];
+	}
 }
 
 if (config.debug) {

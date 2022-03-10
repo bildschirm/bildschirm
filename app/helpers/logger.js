@@ -217,6 +217,7 @@ Spotify Creds:		${spotifyCredentialsPresent ? 'Provided' : chalk.reset.gray('Not
 HTTP URL:		{cyan ${config.http.url}}
 HTTP Port:		${config.http.port}
 HTTP Domains:		${config.http.allowedDomains.map(domain => chalk`{cyan ${domain}}`).join(', ')}
+Plugins:		${config.plugins.paths.map(path => chalk`{cyan ${path}}`).join(', ')}
 \n`
 	);
 };
