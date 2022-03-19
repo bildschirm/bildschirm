@@ -9,7 +9,12 @@ module.exports = async function themes(APP) {
 	const themeList = String(await fs.readFile(path.join(APP.config.dashboard.path, 'themes.json')));
 	const themes = Object.keys(JSON.parse(themeList));
 
-	const { sync, logger, database } = APP;
+	const { sync, logger, database, permissions } = APP;
+
+	permissions
+		.grant('user')
+		.readAny('theme')
+		.updateAny('theme');
 
 	const service = sync.createService('theme', {
 		theme: database.get('theme', 'purple')

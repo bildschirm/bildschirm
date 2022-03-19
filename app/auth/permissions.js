@@ -1,11 +1,19 @@
 const AccessControl = require('accesscontrol');
 const autoBind = require('auto-bind');
+const logger = require('@helpers/logger').createLogger('Permissions');
 
 /**
  * Class responsible for evaluation role-based permissions
  */
 class PermissionsAPI {
 	constructor(grants) {
+		this.roles = ['guest', 'user', 'admin'];
+		this.roleExpands = {
+			guest: ['guest'],
+			user: ['guest', 'user'],
+			admin: ['guest', 'user', 'admin']
+		};
+
 		this.access = new AccessControl(grants);
 
 		// Lock AccessControl so permissions can't be changed
@@ -39,7 +47,27 @@ class PermissionsAPI {
 		 */
 		const composeCrudHandler = (type) => {
 			return (resource, scope = 'any') => {
-				return this.evaluate(role, type, resource, scope);
+				if (!this.roleExists(role)) {
+					logger.error(`Role doesn't exist`, role);
+					throw new Error(`Role doesn't exist`);
+				}
+
+				const allRoles = this.roleExpands[role];
+				
+				let strongestGrant = null;
+				let strongestError = null;
+
+				for (const roleToTry of allRoles) {
+					const result = this.evaluate(roleToTry, type, resource, scope);
+
+					if (result.granted) {
+						strongestGrant = result;
+					} else {
+						strongestError = result;
+					}
+				}
+
+				return strongestGrant || strongestError;
 			};
 		};
 
@@ -49,6 +77,23 @@ class PermissionsAPI {
 			update: composeCrudHandler('update'),
 			delete: composeCrudHandler('delete')
 		};
+	}
+
+	/**
+	 * Expose AccessControl grant function, to grant permissions to roles.
+	 * @return {Function} AccessControl grant function
+	 */
+	get grant() {
+		return this.access.grant.bind(this.access);
+	}
+
+	/**
+	 * Check if role exists
+	 * @param  {String} role
+	 * @return {Boolean}
+	 */
+	roleExists(role) {
+		return role in this.roleExpands;
 	}
 }
 

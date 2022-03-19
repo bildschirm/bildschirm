@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "HTTP API",
+    "version": "v0.0.0"
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/api/v1",
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Request",
+        "description": "",
+        "operationId": "e7899a63-d7e1-4a10-b289-cd4e5a3ce7d9",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "summary": "Healthcheck",
+        "description": "Performs a healthcheck and returns result",
+        "operationId": "9ac58c29-0475-4b25-9fa0-31e49d591085",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "Cookie",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/services/admin-controls": {
+      "get": {
+        "summary": "Get admin-controls state",
+        "description": "Fetch the service main state",
+        "operationId": "a5071051-f3c6-4a52-bdd7-eb86a0163d00",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "Cookie",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/services/admin-controls/action/restart": {
+      "post": {
+        "summary": "Restart bildschirm",
+        "description": "This action will make bildschirm exit(1) to indicate a restart to systemd, docker, etc.",
+        "operationId": "b43624a9-2a48-4f0d-9eb5-4ddf67689ffd",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "Cookie",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/services/telemetry": {
+      "get": {
+        "summary": "Get telemetry state",
+        "description": "Fetch the service main state",
+        "operationId": "7c194cd5-3ba6-452d-9985-af5d61557c06",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "Cookie",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -4,6 +4,7 @@ const session = require('cookie-session');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const shrinkRay = require('shrink-ray-current');
 
 const DashboardAPI = require('./DashboardAPI');
 const PluginHTTPAPI = require('./PluginHTTPAPI');
@@ -102,6 +103,7 @@ class HTTP {
 		// timing info.
 		this.app.use(logging.logMiddleware);
 
+		this.app.use(shrinkRay());
 		this.app.use(cookieParser());
 		this.app.use(bodyParser.urlencoded({ extended: true }));
 		this.app.use(bodyParser.json());
@@ -120,6 +122,8 @@ class HTTP {
 		// Add passport to express
 		this.app.use(auth.passport.initialize());
 		this.app.use(auth.passport.session());
+
+		this.app.use(this.attachHeaders.bind(this));
 
 		// Parse host domain from headers.
 		// On every request, we add a hostUrl to the
@@ -190,6 +194,19 @@ class HTTP {
 	}
 
 	/**
+	 * Express middleware to add custom bildschirm headers.
+	 *
+	 * @param  {express~Request}   req  - The express request
+	 * @param  {express~Response}  res  - The express response
+	 * @param  {Function}          next - Middleware callback
+	 */
+	attachHeaders(req, res, next) {
+		res.header('X-Powered-By', 'bildschirm');
+
+		next();
+	}
+
+	/**
 	 * Express middleware to add components and pages to request.
 	 *
 	 * @param  {express~Request}   req  - The express request
@@ -201,8 +218,9 @@ class HTTP {
 		// This is because not every request actually needs these
 		// and it would be wasteful to evaluate them everytime.
 		req.getComponentsHtml = this.dashboard.getComponentsHTML;
-		req.getPagesJson = this.dashboard.getPagesJSON;
-		req.getComponents = () => this.dashboard.componentsJson;
+		req.getPagesHtml = this.dashboard.getPagesHTML;
+		req.getPages = () => this.dashboard.pages;
+		req.getComponents = () => this.dashboard.components;
 		req.dashboard = this.dashboard;
 
 		next();

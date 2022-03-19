@@ -13,27 +13,36 @@ module.exports = function adminControls({
 	dashboard,
 	sync,
 	auth,
-	state,
+	permissions,
 	logger,
 	database,
 	helpers,
 }) {
+
+	permissions
+		.grant('admin')
+		.readAny('admin-controls')
+		.updateAny('admin-controls');
+
 	const service = sync
 		.createService('admin-controls', {
 			startedAt: new Date(),
 			restarting: false,
 		})
 		.addFilter((state, { user, permissions }) => {
-			return permissions.can(user.role).read('lifecycle', 'any').granted
+			return permissions.can(user.role).read('admin-controls', 'any').granted
 				? state
 				: { restarting: false };
 		});
 
 	service
 		.action('restart')
-		.requirePermission('update', 'lifecycle', 'any')
+		.requirePermission('update', 'admin-controls', 'any')
 		.handler(async (data, { state }) => {
+			logger.info('preparing restart...');
+
 			setTimeout(async () => {
+				logger.info('restarting...');
 				await restart();
 			}, 2000);
 
@@ -46,6 +55,7 @@ module.exports = function adminControls({
 		});
 
 	dashboard.component('admin-controls').custom(__dirname + '/widget.html');
+	dashboard.page('page-admin', { title: 'Admin Page', menu: 10 }).custom(__dirname + '/page.html');
 
 	return {
 		internal: true,

@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const fsPromises = require('fs/promises');
 const autoBind = require('auto-bind');
+const slugify = require('slugify');
 
 /**
  * Data for a dashboard component
@@ -55,14 +56,14 @@ class DashboardAPI {
 		 * @protected
 		 * @type {Object.<Component>}
 		 */
-		this.components = {};
+		this._components = {};
 
 		/**
 		 * The registered dashboard components
 		 * @protected
 		 * @type {Object.<Page>}
 		 */
-		this.pages = {};
+		this._pages = {};
 
 		this.themeColors = require(path.join(config.dashboard.path, 'themes.json'));
 
@@ -81,11 +82,11 @@ class DashboardAPI {
 		return this.themeColors[this.theme]['700'];
 	}
 
-	get componentsJson() {
-		const json = Object.keys(this.components)
+	get components() {
+		const json = Object.keys(this._components)
 			.reduce((components, componentId) => {
 				components[componentId] = {
-					name: this.components[componentId].name
+					name: this._components[componentId].name
 				};
 
 				return components;
@@ -94,10 +95,23 @@ class DashboardAPI {
 		return JSON.stringify(json);
 	}
 
+	get pages() {
+		let pages = {};
+
+		for (const pageUrl in this._pages) {
+			pages[pageUrl] = {
+				...this._pages[pageUrl],
+				content: undefined
+			};
+		}
+
+		return pages;
+	}
+
 	async getComponentsHTML() {
 		let html = '';
 
-		for (const component of Object.values(this.components)) {
+		for (const component of Object.values(this._components)) {
 			if (component.content === null || component.content.type !== 'custom-html') {
 				continue;
 			}
@@ -108,8 +122,18 @@ class DashboardAPI {
 		return html;
 	}
 
-	getPagesJSON() {
-		return JSON.stringify(Object.values(this.pages));
+	async getPagesHTML() {
+		let html = '';
+
+		for (const page of Object.values(this._pages)) {
+			if (page.content === null || page.content.type !== 'custom-html') {
+				continue;
+			}
+
+			html += `<!-- COMPONENT - CUSTOM PAGE - ${page.url} -->\n${await page.content.read()}\n\n`;
+		} 
+
+		return html;
 	}
 
 	/**
@@ -119,13 +143,13 @@ class DashboardAPI {
 	 * @return {ComponentBuilder}
 	 */
 	component(name) {
-		if (name in this.components)
+		if (name in this._components)
 			throw new Error(`Component ${name} already exists`);
 
 		/**
 		 * @type {DashboardAPI~Component}
 		 */
-		this.components[name] = {
+		this._components[name] = {
 			name,
 			content: null
 		};
@@ -144,7 +168,7 @@ class DashboardAPI {
 
 				// const absolutePath = path.resolve(this.pluginPath, vueFilePath);
 
-				// this.components[name].content = {
+				// this._components[name].content = {
 				// 	type: 'vue',
 				// 	path: absolutePath,
 				// 	raw: fs.readFileSync(absolutePath)
@@ -164,7 +188,7 @@ class DashboardAPI {
 			custom: (htmlFilePath) => {
 				const absolutePath = path.resolve(this.pluginPath, htmlFilePath);
 				
-				this.components[name].content = {
+				this._components[name].content = {
 					type: 'custom-html',
 					path: absolutePath,
 					raw: fs.readFileSync(absolutePath),
@@ -178,17 +202,22 @@ class DashboardAPI {
 		return builder;
 	}
 
-	page(url, title) {
-		if (url in this.pages)
-			throw new Error(`Page at ${url} was already registered`);
+	page(name, options = { url: null, title: 'Custom page' }) {
+		name = slugify(name);
+
+		if (!options.url)
+			options.url = `/${name}`;
+		
+		if (name in this._pages)
+			throw new Error(`Page at ${name} was already registered`);
 
 		/**
 		 * @type {DashboardAPI~Page}
 		 */
-		this.dashboard.pages[url] = {
-			title,
+		this._pages[name] = {
+			name,
 			content: null,
-			options: {}
+			options
 		};
 
 		/**
@@ -205,7 +234,7 @@ class DashboardAPI {
 
 				// const absolutePath = path.resolve(this.pluginPath, vueFilePath);
 
-				// this.pages[url].content = {
+				// this._pages[url].content = {
 				// 	type: 'vue',
 				// 	path: absolutePath,
 				// 	raw: fs.readFileSync(absolutePath)
@@ -225,11 +254,12 @@ class DashboardAPI {
 			custom: (htmlFilePath) => {
 				const absolutePath = path.resolve(this.pluginPath, htmlFilePath);
 				
-				this.pages[url].content = {
+				this._pages[name].content = {
 					type: 'custom-html',
 					path: absolutePath,
-					raw: fs.readFileSync(absolutePath)
-				};
+					raw: fs.readFileSync(absolutePath),
+					read: async () => String(await fsPromises.readFile(absolutePath))
+				};;
 
 				return builder;
 			}

@@ -99,7 +99,11 @@ async function combineWithDynamicStats(staticInfo) {
 
 
 module.exports = async function telemetry(APP) {
-	const { config, sync, state, database, dashboard, logger } = APP;
+	const { config, sync, permissions, database, dashboard, logger } = APP;
+
+	permissions
+		.grant('admin')
+		.readAny('telemetry');
 
 	const service = sync.createService('telemetry', {
 		stats: null
